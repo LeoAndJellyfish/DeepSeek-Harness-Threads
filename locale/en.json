@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Threads",
+    "description": "Reply under any turn to open a Slack-style thread panel; each thread is its own child session."
+  }
+}

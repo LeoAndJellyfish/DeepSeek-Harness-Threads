@@ -1,0 +1,50 @@
+{
+  "name": "dsh-threads",
+  "version": "0.13.8",
+  "description": "Side-panel conversation threads and an optional Slack-style interface for DeepSeek Harness.",
+  "type": "module",
+  "main": "./index.js",
+  "icon": "./icon.svg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads.git"
+  },
+  "homepage": "https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads#readme",
+  "bugs": {
+    "url": "https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/issues"
+  },
+  "keywords": ["deepseek", "deepseek-harness", "dsh", "dsh-plugin", "threads", "slack-style"],
+  "scripts": {
+    "check": "node --check index.js && node --check client.js"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "external": [
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ],
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    }
+  }
+}

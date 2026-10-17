@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Threads">
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#3D5AFE"/>
+  <path d="M14 17.5h36v20.5c0 2.2-1.8 4-4 4H32.5L23 50v-7.5h-5c-2.2 0-4-1.8-4-4z" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M23 25.5h18M23 31.5h12" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>
+  <circle cx="45.5" cy="45.5" r="9.5" fill="#0B1B5A"/>
+  <path d="M41 44h9M41 48h6" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>
+</svg>
