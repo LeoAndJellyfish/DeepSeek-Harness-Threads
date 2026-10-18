@@ -1,6 +1,6 @@
 {
   "name": "dsh-threads",
-  "version": "0.13.8",
+  "version": "0.13.9",
   "description": "Side-panel conversation threads and an optional Slack-style interface for DeepSeek Harness.",
   "type": "module",
   "main": "./index.js",
@@ -43,7 +43,8 @@
       ],
       "inject": [
         "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-client-ui-sidebar-right"
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-api-remotes"
       ]
     }
   }

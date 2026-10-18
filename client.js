@@ -19,6 +19,10 @@ window.__ModuleLoader__.load({
     const MarkdownText = primitives.MarkdownText || null;
 
     const PLUGIN_ID = 'dsh-threads';
+    /** Keep in sync with package.json; the account Remote carries it as the client build. */
+    const PLUGIN_VERSION = '0.13.9';
+    /** Official DSH whale mark (50x50 favicon path), used only for the assistant avatar. */
+    const WHALE_PATH = "M48.8354 10.0479C48.3232 9.79199 48.1025 10.2798 47.8032 10.5278C47.7007 10.6079 47.6143 10.7119 47.5273 10.8076C46.7793 11.624 45.9048 12.1597 44.7622 12.0957C43.0923 12 41.666 12.5356 40.4058 13.8398C40.1377 12.2319 39.2476 11.272 37.8926 10.6558C37.1836 10.3359 36.4668 10.0156 35.9702 9.31982C35.6235 8.82373 35.5293 8.27197 35.356 7.72754C35.2456 7.3999 35.1353 7.06396 34.7651 7.00781C34.3633 6.94385 34.2056 7.2876 34.0479 7.57568C33.418 8.75195 33.1733 10.0479 33.1973 11.3599C33.2524 14.312 34.4736 16.6641 36.8999 18.3359C37.1758 18.5278 37.2466 18.7197 37.1597 19C36.9946 19.5757 36.7974 20.1357 36.624 20.7119C36.5137 21.0801 36.3486 21.1597 35.9624 21C34.6309 20.4321 33.481 19.5918 32.4644 18.5757C30.7393 16.8721 29.1792 14.9917 27.2334 13.52C26.7764 13.1758 26.3193 12.856 25.8467 12.5518C23.8618 10.584 26.1069 8.96777 26.627 8.77588C27.1704 8.57568 26.8159 7.8877 25.0591 7.896C23.3022 7.90381 21.6953 8.50391 19.647 9.30371C19.3477 9.42383 19.0322 9.51172 18.7095 9.58398C16.8501 9.22363 14.9199 9.14355 12.9033 9.37598C9.10596 9.80762 6.07275 11.6396 3.84326 14.7681C1.16455 18.5278 0.53418 22.7998 1.30664 27.2559C2.11768 31.9521 4.46582 35.8398 8.07373 38.8799C11.8159 42.0322 16.1255 43.5762 21.041 43.2803C24.0269 43.104 27.3516 42.6963 31.1016 39.4561C32.0469 39.936 33.0396 40.1279 34.686 40.272C35.9546 40.3921 37.1758 40.208 38.1211 40.0078C39.6021 39.688 39.4995 38.2881 38.9639 38.0322C34.623 35.9678 35.5762 36.8081 34.71 36.1279C36.9155 33.4639 40.2402 30.6958 41.54 21.728C41.6426 21.0161 41.5557 20.5679 41.54 19.9917C41.5322 19.6396 41.6108 19.5039 42.0049 19.4639C43.0923 19.3359 44.1479 19.0317 45.1167 18.4878C47.9292 16.9199 49.064 14.3438 49.3315 11.2559C49.3711 10.7837 49.3237 10.2959 48.8354 10.0479ZM24.3262 37.8398C20.1196 34.4639 18.0791 33.3521 17.2358 33.3999C16.4482 33.4482 16.5898 34.3682 16.7632 34.9678C16.9443 35.5601 17.1812 35.9683 17.5117 36.4878C17.7402 36.832 17.8979 37.3442 17.2832 37.728C15.9282 38.584 13.5728 37.4399 13.4624 37.3838C10.7207 35.7358 8.42822 33.5601 6.81348 30.584C5.25342 27.7197 4.34766 24.6479 4.19775 21.3677C4.1582 20.5757 4.38672 20.2959 5.15869 20.1519C6.17529 19.96 7.22314 19.9199 8.23926 20.0718C12.5327 20.7119 16.1885 22.6719 19.2529 25.7759C21.002 27.5439 22.3252 29.6558 23.6885 31.7202C25.1377 33.9121 26.6978 36 28.6831 37.7119C29.3843 38.312 29.9434 38.7681 30.479 39.104C28.8643 39.2881 26.1699 39.3281 24.3262 37.8398ZM26.3433 24.6001C26.3433 24.248 26.6191 23.9678 26.9658 23.9678C27.0444 23.9678 27.1152 23.9839 27.1782 24.0078C27.2651 24.04 27.3438 24.0879 27.4067 24.1602C27.5171 24.272 27.5801 24.4321 27.5801 24.6001C27.5801 24.9521 27.3042 25.2319 26.9575 25.2319C26.6108 25.2319 26.3433 24.9521 26.3433 24.6001ZM32.6064 27.8799C32.2046 28.0479 31.8027 28.1919 31.4165 28.208C30.8179 28.2397 30.1641 27.9922 29.8096 27.688C29.2583 27.2158 28.8643 26.9521 28.6987 26.1279C28.6279 25.7759 28.6675 25.2319 28.7305 24.9199C28.8721 24.248 28.7144 23.8159 28.2495 23.4238C27.8716 23.104 27.3911 23.0161 26.8633 23.0161C26.666 23.0161 26.4849 22.9277 26.3511 22.856C26.1304 22.7441 25.9492 22.4639 26.1226 22.1201C26.1777 22.0078 26.4458 21.7358 26.5088 21.688C27.2256 21.272 28.0527 21.4077 28.8169 21.7197C29.5259 22.0161 30.0615 22.5601 30.834 23.3281C31.6216 24.2559 31.7632 24.5117 32.2124 25.208C32.5669 25.752 32.8901 26.312 33.1104 26.9521C33.2446 27.3521 33.0713 27.6802 32.6064 27.8799Z";
     const NS = 'threads';
     const TAB_KIND = 'thread';
     const STORAGE_KEY = 'dsh.threads.v1';
@@ -112,6 +116,8 @@ window.__ModuleLoader__.load({
       'skin.today': '今天',
       'skin.yesterday': '昨天',
       'skin.avatarYou': '你',
+      'skin.goalAuthor': '目标',
+      'skin.goalRunning': '执行中…',
       'md.copy': '复制',
       'md.copied': '已复制',
       'md.code': '代码',
@@ -204,6 +210,8 @@ window.__ModuleLoader__.load({
       'skin.today': 'Today',
       'skin.yesterday': 'Yesterday',
       'skin.avatarYou': 'Y',
+      'skin.goalAuthor': 'Goal',
+      'skin.goalRunning': 'Running…',
       'md.copy': 'Copy',
       'md.copied': 'Copied',
       'md.code': 'Code',
@@ -280,6 +288,164 @@ window.__ModuleLoader__.load({
       return React.useSyncExternalStore(subscribeSkin, function snapshot() {
         return skin;
       });
+    }
+
+    /* ------------------------------------------------------------------ *
+     * Signed-in DeepSeek account picture. The account Remote is optional:
+     * without it the avatars keep the local glyph. The URL stays in memory
+     * only, so signing out cannot leave a stale face on the next render.
+     * ------------------------------------------------------------------ */
+
+    const EMPTY_ACCOUNT_AVATAR = { url: '', name: '', status: 'idle' };
+    let accountAvatar = EMPTY_ACCOUNT_AVATAR;
+    let accountAvatarGeneration = 0;
+    const accountAvatarListeners = new Set();
+
+    function subscribeAccountAvatar(listener) {
+      accountAvatarListeners.add(listener);
+      return function unsubscribe() {
+        accountAvatarListeners.delete(listener);
+      };
+    }
+
+    function publishAccountAvatar(next) {
+      if (
+        accountAvatar.url === next.url &&
+        accountAvatar.name === next.name &&
+        accountAvatar.status === next.status
+      ) {
+        return;
+      }
+      accountAvatar = next;
+      for (const listener of Array.from(accountAvatarListeners)) {
+        try {
+          listener();
+        } catch (error) {
+          /* one listener's failure must not break the others */
+        }
+      }
+    }
+
+    function useAccountAvatar() {
+      return React.useSyncExternalStore(subscribeAccountAvatar, function snapshot() {
+        return accountAvatar;
+      });
+    }
+
+    /** A rendered <img> failed after the preload succeeded (cache eviction). */
+    function failAccountAvatar(url) {
+      if (!url || accountAvatar.url !== url || accountAvatar.status !== 'ready') return;
+      publishAccountAvatar({ url: url, name: accountAvatar.name, status: 'failed' });
+    }
+
+    /** Preload one URL so a row never shows a half-loaded circle. */
+    function loadAccountAvatar(url) {
+      return new Promise(function settle(resolve) {
+        try {
+          const image = new Image();
+          image.referrerPolicy = 'no-referrer';
+          image.onload = function onload() {
+            resolve(true);
+          };
+          image.onerror = function onerror() {
+            resolve(false);
+          };
+          image.src = url;
+        } catch (error) {
+          resolve(false);
+        }
+      });
+    }
+
+    /** Query the Platform profile; the account Remote returns display-safe fields. */
+    async function readAccountAvatar(ctx, account) {
+      const generation = ++accountAvatarGeneration;
+      let result;
+      try {
+        const locale = ctx.locale.getSnapshot();
+        result = await account.getProfile({
+          version: PLUGIN_VERSION,
+          locale: locale && locale.active ? locale.active : 'en',
+          timezoneOffsetSeconds: -new Date().getTimezoneOffset() * 60,
+        });
+      } catch (error) {
+        return;
+      }
+      if (generation !== accountAvatarGeneration) return;
+      if (!result || !result.ok || !result.value || result.value.status !== 'ready') return;
+      const profile = result.value.value || {};
+      const url = typeof profile.avatarUrl === 'string' ? profile.avatarUrl : '';
+      const name = typeof profile.name === 'string' ? profile.name : '';
+      if (!url) {
+        publishAccountAvatar({ url: '', name: name, status: 'ready' });
+        return;
+      }
+      if (accountAvatar.url === url && accountAvatar.status === 'ready') {
+        publishAccountAvatar({ url: url, name: name, status: 'ready' });
+        return;
+      }
+      const loaded = await loadAccountAvatar(url);
+      if (generation !== accountAvatarGeneration) return;
+      publishAccountAvatar({ url: url, name: name, status: loaded ? 'ready' : 'failed' });
+    }
+
+    /** Follow account state so a sign-in, sign-out or new picture refreshes. */
+    function watchAccountAvatar(ctx) {
+      const readService = function readService(name) {
+        return typeof ctx.get === 'function' ? ctx.get(name) : undefined;
+      };
+      const remote = readService('remote') || ctx.remote;
+      const account = readService('remote.account') || (remote && remote.account);
+      if (!remote || !account) return;
+      if (
+        typeof remote.$stream !== 'function' ||
+        typeof account.watch !== 'function' ||
+        typeof account.getProfile !== 'function'
+      ) {
+        return;
+      }
+      let stream;
+      try {
+        stream = remote.$stream({
+          name: 'dsh-threads-account',
+          open: function open(signal) {
+            return account.watch(signal);
+          },
+          ended: function ended() {
+            return new Error('dsh-threads account stream ended');
+          },
+        });
+      } catch (error) {
+        return;
+      }
+      ctx.effect(
+        function accountStreamLifetime() {
+          return function disposeAccountStream() {
+            try {
+              void stream.dispose();
+            } catch (error) {
+              /* already closed */
+            }
+          };
+        },
+        'threads: account avatar stream',
+      );
+      (async function followAccount() {
+        try {
+          for await (const frame of stream) {
+            const view = frame && frame.value;
+            if (view && view.status === 'credential-stored') {
+              void readAccountAvatar(ctx, account);
+            } else {
+              accountAvatarGeneration += 1;
+              publishAccountAvatar({ url: '', name: '', status: 'idle' });
+            }
+            if (frame && typeof frame.accept === 'function') frame.accept();
+          }
+        } catch (error) {
+          /* the optional account Remote leaves the local glyph in place */
+        }
+      })();
     }
 
     /* ------------------------------------------------------------------ *
@@ -911,10 +1077,11 @@ window.__ModuleLoader__.load({
       );
     }
 
-    function UserGlyph() {
+    function UserGlyph(props) {
+      const size = props && props.size ? props.size : 12;
       return h(
         'svg',
-        { viewBox: '0 0 16 16', width: 12, height: 12, fill: 'none', 'aria-hidden': true },
+        { viewBox: '0 0 16 16', width: size, height: size, fill: 'none', 'aria-hidden': true },
         h('circle', { cx: 8, cy: 5.2, r: 2.6, stroke: 'currentColor', strokeWidth: 1.3 }),
         h('path', {
           d: 'M3 13.2c.6-2.4 2.7-3.8 5-3.8s4.4 1.4 5 3.8',
@@ -922,6 +1089,67 @@ window.__ModuleLoader__.load({
           strokeWidth: 1.3,
           strokeLinecap: 'round',
         }),
+      );
+    }
+
+    /** The assistant's stable identity mark, legible down to a 24px row. */
+    function WhaleGlyph(props) {
+      const size = props && props.size ? props.size : 15;
+      return h(
+        'svg',
+        { viewBox: '0 0 50 50', width: size, height: size, fill: 'none', 'aria-hidden': true },
+        h('path', { d: WHALE_PATH, fill: 'currentColor' }),
+      );
+    }
+
+    /** Goal identity mark for command results, kept apart from the assistant whale. */
+    function GoalGlyph(props) {
+      const size = props && props.size ? props.size : 14;
+      return h(
+        'svg',
+        { viewBox: '0 0 16 16', width: size, height: size, fill: 'none', 'aria-hidden': true },
+        h('circle', { cx: 8, cy: 8, r: 5.4, stroke: 'currentColor', strokeWidth: 1.3 }),
+        h('circle', { cx: 8, cy: 8, r: 2.5, stroke: 'currentColor', strokeWidth: 1.3 }),
+        h('circle', { cx: 8, cy: 8, r: 0.9, fill: 'currentColor' }),
+      );
+    }
+
+    /** Circular user avatar: the signed-in account picture, else the local glyph. */
+    function UserAvatar(props) {
+      const state = useAccountAvatar();
+      const size = props && props.size ? props.size : 24;
+      const className = props && props.className ? props.className : 'sk-avatar';
+      const loaded = state.status === 'ready' && state.url !== '';
+      return h(
+        'span',
+        {
+          className: className,
+          'aria-hidden': true,
+          title: state.name || undefined,
+        },
+        loaded
+          ? h('img', {
+              className: 'avatar-img',
+              src: state.url,
+              alt: '',
+              draggable: false,
+              referrerPolicy: 'no-referrer',
+              onError: function avatarFailed() {
+                failAccountAvatar(state.url);
+              },
+            })
+          : h(UserGlyph, { size: Math.max(9, Math.round(size * 0.5)) }),
+      );
+    }
+
+    /** Circular assistant avatar: the whale mark on the theme's brand disc. */
+    function AssistantAvatar(props) {
+      const size = props && props.size ? props.size : 24;
+      const className = props && props.className ? props.className : 'sk-avatar sk-avatar-assistant';
+      return h(
+        'span',
+        { className: className, 'aria-hidden': true },
+        h(WhaleGlyph, { size: Math.max(11, Math.round(size * 0.62)) }),
       );
     }
 
@@ -947,9 +1175,9 @@ window.__ModuleLoader__.load({
       'body[data-ds-dark-theme]{--sk-azure-ink:#14ADFF}',
       '[data-dsh-threads-skin="slack"] .sk-row:hover{background:color-mix(in srgb,var(--sk-sky) 14%,transparent)}',
       '[data-dsh-threads-skin="slack"] .sk-date-pill{border-color:color-mix(in srgb,var(--sk-sky) 60%,var(--dsw-alias-border-l1))}',
-      '[data-dsh-threads-skin="slack"] .sk-avatar-assistant{background:var(--sk-indigo)}',
+      '[data-dsh-threads-skin="slack"] .sk-avatar-assistant{background:var(--sk-indigo);color:#ffffff}',
       '[data-dsh-threads-skin="slack"] .sk-action:hover{color:var(--sk-azure-ink)}',
-      '[data-dsh-threads-skin="slack"] .dt-thread-card-avatar-d{background:var(--sk-indigo)}',
+      '[data-dsh-threads-skin="slack"] .dt-thread-card-avatar-d{background:var(--sk-indigo);color:#ffffff}',
       '[data-dsh-threads-skin="slack"] .dt-thread-card-count{color:var(--sk-azure-ink)}',
       '[data-dsh-threads-skin="slack"] .dt-replies-btn:hover{color:var(--sk-azure-ink)}',
       '[data-dsh-threads-skin="slack"] button.dt-switch[aria-checked="true"]{background:color-mix(in srgb,var(--sk-indigo) 30%,var(--dsw-alias-bg-layer-1));border-color:color-mix(in srgb,var(--sk-indigo) 45%,var(--dsw-alias-border-l1))}',
@@ -963,7 +1191,7 @@ window.__ModuleLoader__.load({
       '.dt-thread-card:hover{border-color:var(--dsw-alias-border-l2)}',
       '.dt-thread-card-main{display:flex;align-items:center;gap:8px;width:100%;padding:6px 10px;border:0;background:transparent;color:inherit;font:inherit;font-size:12px;text-align:left;cursor:pointer}',
       '.dt-thread-card-avatars{display:inline-flex;align-items:center;flex:none}',
-      '.dt-thread-card-avatar{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;border:2px solid var(--dsw-alias-bg-layer-1);background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-secondary);font-size:9px;font-weight:700}',
+      '.dt-thread-card-avatar{display:grid;place-items:center;overflow:hidden;width:20px;height:20px;border-radius:50%;border:2px solid var(--dsw-alias-bg-layer-1);background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-secondary);font-size:9px;font-weight:700}',
       '.dt-thread-card-avatar-d{margin-left:-6px;background:var(--dsw-alias-brand-primary);color:var(--dsw-alias-bg-base)}',
       '.dt-thread-card-count{flex:none;color:var(--dsw-alias-brand-primary);font-weight:600}',
       '.dt-thread-card-time{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--dsw-alias-label-secondary);font-size:11px}',
@@ -979,7 +1207,7 @@ window.__ModuleLoader__.load({
       '.dt-quote-top{display:flex;align-items:center;justify-content:space-between;gap:8px}',
       '.dt-quote-time{font-size:11px;color:var(--dsw-alias-label-secondary);white-space:nowrap}',
       '.dt-people{display:inline-flex;align-items:center;margin-right:2px}',
-      '.dt-people-avatar{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;border:2px solid var(--dsw-alias-bg-layer-1);background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-secondary);font-size:9px;font-weight:700}',
+      '.dt-people-avatar{display:grid;place-items:center;overflow:hidden;width:18px;height:18px;border-radius:50%;border:2px solid var(--dsw-alias-bg-layer-1);background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-secondary);font-size:9px;font-weight:700}',
       '.dt-people-avatar + .dt-people-avatar{margin-left:-5px}',
       '.dt-people-d{background:var(--sk-indigo);color:#ffffff}',
       '.dt-error-bottom{display:flex;align-items:center;gap:8px;justify-content:space-between}',
@@ -1001,7 +1229,7 @@ window.__ModuleLoader__.load({
       '.dt-row{display:flex;gap:10px;padding:8px;margin:0 -8px;border-radius:6px;transition:background-color .1s ease}',
       '.dt-row:hover{background:color-mix(in srgb,var(--sk-sky) 10%,transparent)}',
       '.dt-row[data-group="1"]{padding-top:2px}',
-      '.dt-avatar{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-secondary);margin-top:2px}',
+      '.dt-avatar{flex:none;width:24px;height:24px;border-radius:50%;overflow:hidden;display:grid;place-items:center;font-size:10px;font-weight:700;background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-secondary);margin-top:2px}',
       '.dt-avatar[data-ghost="1"]{background:transparent}',
       '.dt-avatar-ghost{background:transparent}',
       '.dt-lightbox{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:24px;background:rgba(0,0,0,.72);cursor:zoom-out}',
@@ -1010,6 +1238,8 @@ window.__ModuleLoader__.load({
       '.dt-image{display:block;padding:0;border:1px solid var(--dsw-alias-border-l1);border-radius:4px;overflow:hidden;max-width:200px;background:var(--dsw-alias-bg-layer-1);cursor:zoom-in}',
       '.dt-image img{display:block;max-width:200px;max-height:160px;object-fit:contain}',
       '.dt-avatar svg{display:block}',
+      '.sk-avatar svg,.dt-thread-card-avatar svg,.dt-thread-row-avatar svg,.dt-people-avatar svg{display:block}',
+      '.avatar-img{display:block;width:100%;height:100%;object-fit:cover}',
       '.dt-row[data-role="assistant"] .dt-avatar{background:var(--sk-indigo);color:#ffffff}',
       '.dt-body{min-width:0;flex:1}',
       '.dt-meta{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}',
@@ -1056,7 +1286,7 @@ window.__ModuleLoader__.load({
       '.dt-thread-row:hover{background:color-mix(in srgb,var(--sk-sky) 12%,transparent);border-color:color-mix(in srgb,var(--sk-sky) 45%,var(--dsw-alias-border-l1))}',
       '.dt-thread-row:active{background:color-mix(in srgb,var(--sk-sky) 20%,transparent)}',
       '.dt-thread-row-avatars{display:inline-flex;flex:none;margin-top:1px}',
-      '.dt-thread-row-avatar{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;border:2px solid var(--dsw-alias-bg-base);background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-secondary);font-size:9px;font-weight:700}',
+      '.dt-thread-row-avatar{display:grid;place-items:center;overflow:hidden;width:20px;height:20px;border-radius:50%;border:2px solid var(--dsw-alias-bg-base);background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-secondary);font-size:9px;font-weight:700}',
       '.dt-thread-row-avatar-d{margin-left:-6px;background:var(--sk-indigo);color:#ffffff}',
       '.dt-thread-row-body{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}',
       '.dt-thread-row-text{font-size:12.5px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}',
@@ -1075,9 +1305,16 @@ window.__ModuleLoader__.load({
       '.sk-row{position:relative;display:flex;gap:10px;padding:8px 10px;margin:0 -10px;border-radius:6px;max-width:100%;transition:background-color .1s ease}',
       '.sk-row:hover{background:color-mix(in srgb, var(--dsw-alias-label-primary) 7%, var(--dsw-alias-bg-base))}',
       '.sk-row[data-group="1"]{padding-top:2px}',
-      '.sk-avatar{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;margin-top:2px;background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-secondary);font-size:10px;font-weight:700}',
+      '.sk-avatar{flex:none;width:24px;height:24px;border-radius:50%;overflow:hidden;display:grid;place-items:center;margin-top:2px;background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-secondary);font-size:10px;font-weight:700}',
       '.sk-avatar-ghost{background:transparent}',
       '.sk-avatar-assistant{background:var(--dsw-alias-brand-primary);color:var(--dsw-alias-bg-base)}',
+      '.sk-avatar.sk-goal-avatar{background:color-mix(in srgb,var(--sk-azure) 16%,var(--dsw-alias-bg-layer-2));color:var(--sk-azure-ink)}',
+      '.sk-command-token{display:inline-block;padding:0 4px;border-radius:4px;background:color-mix(in srgb,var(--sk-azure) 15%,transparent);color:var(--sk-azure-ink);font-family:var(--ds-font-family-code,ui-monospace,SFMono-Regular,Consolas,monospace);font-size:.92em}',
+      '.sk-goal-card{margin-top:4px;border:1px solid var(--dsw-alias-border-l1);border-left:3px solid var(--sk-azure);border-radius:8px;background:var(--dsw-alias-bg-layer-1);padding:9px 12px;max-width:100%}',
+      '.sk-goal-card[data-state="error"]{border-left-color:var(--dsw-alias-state-error-primary)}',
+      '.sk-goal-title{font-size:12.5px;font-weight:600;color:var(--dsw-alias-label-primary);overflow-wrap:anywhere}',
+      '.sk-goal-body{margin:3px 0 0;padding:0;white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:12.5px;line-height:1.6;color:var(--dsw-alias-label-secondary)}',
+      '.sk-goal-card[data-state="error"] .sk-goal-title,.sk-goal-card[data-state="error"] .sk-goal-body{color:var(--dsw-alias-state-error-primary)}',
       '.sk-body{min-width:0;flex:1}',
       '.sk-meta{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}',
       '.sk-author{font-size:12px;font-weight:600}',
@@ -1166,11 +1403,12 @@ window.__ModuleLoader__.load({
     };
 
     return {
-      inject: ['slots', 'sessions', 'locale', 'sidebarRight', 'sidebarRightTabs', 'uiWorkspace', 'workspaces'],
+      inject: ['slots', 'sessions', 'locale', 'remote', 'sidebarRight', 'sidebarRightTabs', 'uiWorkspace', 'workspaces'],
       apply(ctx) {
         const t = ctx.locale.bind(NS);
 
         void loadPersisted();
+        watchAccountAvatar(ctx);
 
         ctx.effect(() => ctx.locale.register(NS, { zh: ZH, en: EN }), 'threads: locale');
         ctx.effect(() => {
@@ -1344,8 +1582,11 @@ window.__ModuleLoader__.load({
               h(
                 'span',
                 { className: 'dt-thread-card-avatars', 'aria-hidden': true },
-                h('span', { className: 'dt-thread-card-avatar' }, h(UserGlyph, null)),
-                h('span', { className: 'dt-thread-card-avatar dt-thread-card-avatar-d' }, 'D'),
+                h(UserAvatar, { size: 20, className: 'dt-thread-card-avatar' }),
+                h(AssistantAvatar, {
+                  size: 20,
+                  className: 'dt-thread-card-avatar dt-thread-card-avatar-d',
+                }),
               ),
               h(
                 'span',
@@ -1451,8 +1692,11 @@ window.__ModuleLoader__.load({
                       h(
                         'span',
                         { className: 'dt-thread-row-avatars', 'aria-hidden': true },
-                        h('span', { className: 'dt-thread-row-avatar' }, h(UserGlyph, null)),
-                        h('span', { className: 'dt-thread-row-avatar dt-thread-row-avatar-d' }, 'D'),
+                        h(UserAvatar, { size: 20, className: 'dt-thread-row-avatar' }),
+                        h(AssistantAvatar, {
+                          size: 20,
+                          className: 'dt-thread-row-avatar dt-thread-row-avatar-d',
+                        }),
                       ),
                       h(
                         'span',
@@ -1892,7 +2136,7 @@ window.__ModuleLoader__.load({
             h(
             'div',
             { className: 'sk-row', 'data-role': 'user' },
-            h('div', { className: 'sk-avatar', 'aria-hidden': true }, t('skin.avatarYou')),
+            h(UserAvatar, { size: 24, className: 'sk-avatar' }),
             h(
               'div',
               { className: 'sk-body' },
@@ -1953,6 +2197,90 @@ window.__ModuleLoader__.load({
           );
         }
 
+        /** Slack renderer for the goal-owned `command-input` node. */
+        function SlackCommandInputNode(props) {
+          const node = props.node || {};
+          const data = node.data || {};
+          const text = typeof data.text === 'string' ? data.text : '';
+          const { active } = useMarkdownLabels();
+          const time = nodeTime(node, data);
+          if (!text) return null;
+          const space = text.indexOf(' ');
+          const token = space > 0 ? text.slice(0, space) : text;
+          const rest = space > 0 ? text.slice(space) : '';
+          return h(
+            'div',
+            { className: 'sk-row', 'data-role': 'user' },
+            h(UserAvatar, { size: 24, className: 'sk-avatar' }),
+            h(
+              'div',
+              { className: 'sk-body' },
+              h(
+                'div',
+                { className: 'sk-meta' },
+                h('span', { className: 'sk-author' }, t('panel.you')),
+                time ? h('span', { className: 'sk-time' }, clockText(time, active)) : null,
+              ),
+              h(
+                'div',
+                { className: 'sk-text' },
+                h('span', { className: 'sk-command-token' }, token),
+                rest,
+              ),
+            ),
+            h('div', { className: 'sk-actions' }, h(SlackCopyButton, { text })),
+          );
+        }
+
+        /** Slack row for the `/goal` command result, reached through the commandview slot. */
+        function SlackGoalCommandView(props) {
+          const command = props.node || {};
+          const outcome = command.outcome || null;
+          const raw = outcome && typeof outcome.text === 'string' ? outcome.text.trim() : '';
+          const lines = raw ? raw.split('\n') : [];
+          const running = outcome === null;
+          const failed = Boolean(outcome && outcome.kind === 'error');
+          const fallbackTitle = command.name || 'goal';
+          const title = running
+            ? t('skin.goalRunning')
+            : failed || lines.length <= 1
+              ? fallbackTitle
+              : lines[0];
+          const body = running
+            ? ''
+            : failed || lines.length <= 1
+              ? raw
+              : lines.slice(1).join('\n').trim();
+          const { active } = useMarkdownLabels();
+          const time = typeof command.time === 'number' ? command.time : undefined;
+          return h(
+            'div',
+            { className: 'sk-row', 'data-role': 'assistant' },
+            h(
+              'span',
+              { className: 'sk-avatar sk-goal-avatar', 'aria-hidden': true },
+              h(GoalGlyph, { size: 14 }),
+            ),
+            h(
+              'div',
+              { className: 'sk-body' },
+              h(
+                'div',
+                { className: 'sk-meta' },
+                h('span', { className: 'sk-author' }, t('skin.goalAuthor')),
+                time ? h('span', { className: 'sk-time' }, clockText(time, active)) : null,
+              ),
+              h(
+                'div',
+                { className: 'sk-goal-card', 'data-state': failed ? 'error' : 'ok' },
+                h('div', { className: 'sk-goal-title' }, title),
+                body ? h('pre', { className: 'sk-goal-body' }, body) : null,
+              ),
+            ),
+            h('div', { className: 'sk-actions' }, h(SlackCopyButton, { text: raw })),
+          );
+        }
+
         /** Slack-style renderer replacing the shipped `assistant-step` Chat node. */
         function SlackAssistantNode(props) {
           const node = props.node || {};
@@ -1976,11 +2304,10 @@ window.__ModuleLoader__.load({
           return h(
             'div',
             { className: 'sk-row', 'data-role': 'assistant' },
-            h(
-              'div',
-              { className: 'sk-avatar sk-avatar-assistant', 'aria-hidden': true },
-              'D',
-            ),
+            h(AssistantAvatar, {
+              size: 24,
+              className: 'sk-avatar sk-avatar-assistant',
+            }),
             h(
               'div',
               { className: 'sk-body' },
@@ -2206,11 +2533,9 @@ window.__ModuleLoader__.load({
           return h(
             'div',
             { className: 'dt-row', 'data-role': assistant ? 'assistant' : 'user' },
-            h(
-              'div',
-              { className: 'dt-avatar', 'aria-hidden': true },
-              assistant ? 'D' : h(UserGlyph, null),
-            ),
+            assistant
+              ? h(AssistantAvatar, { size: 24, className: 'dt-avatar' })
+              : h(UserAvatar, { size: 24, className: 'dt-avatar' }),
             h(
               'div',
               { className: 'dt-body' },
@@ -2624,11 +2949,14 @@ window.__ModuleLoader__.load({
                   h(
                     'span',
                     { className: 'dt-people', 'aria-hidden': true },
-                    items.some((item) => item.kind === 'assistant')
-                      ? h('span', { className: 'dt-people-avatar dt-people-d' }, 'D')
-                      : null,
                     items.some((item) => item.kind === 'user')
-                      ? h('span', { className: 'dt-people-avatar' }, t('skin.avatarYou'))
+                      ? h(UserAvatar, { size: 18, className: 'dt-people-avatar' })
+                      : null,
+                    items.some((item) => item.kind === 'assistant')
+                      ? h(AssistantAvatar, {
+                          size: 18,
+                          className: 'dt-people-avatar dt-people-d',
+                        })
                       : null,
                   ),
                   entry && entry.updatedAt
@@ -3030,9 +3358,10 @@ window.__ModuleLoader__.load({
           };
         }, 'threads: jazz theme');
 
-        /* Slack skin: replace only the two message rows, and only while the
-         * preference says so. Every other Chat node keeps the shipped
-         * renderer, and the toggle disposes these registrations. */
+        /* Slack skin: replace the user/assistant/steering rows, the goal
+         * command input, and the goal command result. Every other Chat node
+         * keeps the shipped renderer, and the toggle disposes these
+         * registrations. */
         ctx.effect(() => {
           let disposers = [];
           const sync = () => {
@@ -3068,6 +3397,22 @@ window.__ModuleLoader__.load({
                   ctx.slots.register(
                     { name: 'conversation.chat.node', key: 'steering', priority: -1 },
                     SlackSteeringNode,
+                  ),
+                ),
+              );
+              disposers.push(
+                ctx.slots.inject('conversation.chat.node', () =>
+                  ctx.slots.register(
+                    { name: 'conversation.chat.node', key: 'command-input', priority: -1 },
+                    SlackCommandInputNode,
+                  ),
+                ),
+              );
+              disposers.push(
+                ctx.slots.inject('conversation.chat.commandview', () =>
+                  ctx.slots.register(
+                    { name: 'conversation.chat.commandview', key: 'goal', priority: -1 },
+                    SlackGoalCommandView,
                   ),
                 ),
               );

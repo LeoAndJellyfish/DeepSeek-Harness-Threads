@@ -2,7 +2,7 @@
 
 DeepSeek Harness（DSH）侧边线程对话插件，提供独立回复面板及可选的 Slack 风格聊天界面。点击任意一轮回答下的「回复」，即可在右侧栏继续追问。
 
-当前版本：**0.13.8** · 包名：`dsh-threads` · [版本下载](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/releases/tag/v0.13.8) · [问题反馈](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/issues)
+当前版本：**0.13.9** · 包名：`dsh-threads` · [版本下载](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/releases/tag/v0.13.9) · [问题反馈](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/issues)
 
 ## 安装
 
@@ -11,7 +11,7 @@ DeepSeek Harness（DSH）侧边线程对话插件，提供独立回复面板及�
 从 GitHub 安装固定版本：
 
 ```powershell
-dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.13.8
+dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.13.9
 ```
 
 安装完成后重启 `dsh web`，刷新浏览器。在一轮已完成的回答下确认「回复」入口，在对话标题栏确认「线程」按钮及 Slack 样式开关。
@@ -28,7 +28,7 @@ dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads
 
 ```text
 请使用当前桌面端内置的 plugin_manager 安装
-github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.13.8。
+github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.13.9。
 先检查当前 profile 和已安装的同名插件，已有安装时核对来源与版本；
 通过工具支持的安装或更新操作完成，并报告实际安装版本和重启要求。
 ```
@@ -37,10 +37,10 @@ github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.13.8。
 
 ### 离线资源包
 
-下载 Release 中的 `dsh-threads-0.13.8.tgz`，在文件所在目录执行：
+下载 Release 中的 `dsh-threads-0.13.9.tgz`，在文件所在目录执行：
 
 ```powershell
-dsh plugin --profile web add ./dsh-threads-0.13.8.tgz
+dsh plugin --profile web add ./dsh-threads-0.13.9.tgz
 ```
 
 也可下载 ZIP，解压后使用包含 `package.json` 的目录绝对路径：
@@ -70,7 +70,7 @@ dsh plugin --profile web remove dsh-threads
 - 独立线程面板：会话分叉、归档恢复、工具审批、Markdown 与数学公式。
 - 线程导航：回复条数、运行状态、未读提示、最近更新时间。
 - 消息输入：文字草稿持久化、粘贴与拖拽图片、线程结论引用。
-- 可选 Slack 样式：头像和作者、日期分隔、悬停操作条、折叠插话。
+- 可选 Slack 样式：DeepSeek 账号头像与鲸鱼助手标、日期分隔、悬停操作条、折叠插话，以及 `/goal` 命令输入与结果卡片。
 - Host 持久化：线程索引、文字草稿和界面偏好在重启后保留。
 
 ## 用法
