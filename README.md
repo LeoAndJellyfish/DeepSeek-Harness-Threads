@@ -2,7 +2,7 @@
 
 DeepSeek Harness（DSH）侧边线程对话插件，提供独立回复面板及可选的 Slack 风格聊天界面。点击任意一轮回答下的「回复」，即可在右侧栏继续追问。
 
-当前版本：**0.14.0** · 包名：`dsh-threads` · [版本下载](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/releases/tag/v0.14.0) · [问题反馈](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/issues)
+当前版本：**0.14.1** · 包名：`dsh-threads` · [版本下载](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/releases/tag/v0.14.1) · [问题反馈](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/issues)
 
 ## 安装
 
@@ -11,7 +11,7 @@ DeepSeek Harness（DSH）侧边线程对话插件，提供独立回复面板及�
 从 GitHub 安装固定版本：
 
 ```powershell
-dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.14.0
+dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.14.1
 ```
 
 安装完成后重启 `dsh web`，刷新浏览器。在一轮已完成的回答下确认「回复」入口，在对话标题栏确认「线程」按钮及 Slack 样式开关。
@@ -28,7 +28,7 @@ dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads
 
 ```text
 请使用当前桌面端内置的 plugin_manager 安装
-github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.14.0。
+github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.14.1。
 先检查当前 profile 和已安装的同名插件，已有安装时核对来源与版本；
 通过工具支持的安装或更新操作完成，并报告实际安装版本和重启要求。
 ```
@@ -37,10 +37,10 @@ github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.14.0。
 
 ### 离线资源包
 
-下载 Release 中的 `dsh-threads-0.14.0.tgz`，在文件所在目录执行：
+下载 Release 中的 `dsh-threads-0.14.1.tgz`，在文件所在目录执行：
 
 ```powershell
-dsh plugin --profile web add ./dsh-threads-0.14.0.tgz
+dsh plugin --profile web add ./dsh-threads-0.14.1.tgz
 ```
 
 也可下载 ZIP，解压后使用包含 `package.json` 的目录绝对路径：
@@ -98,6 +98,7 @@ dsh plugin --profile web remove dsh-threads
 - 线程里的 Agent 请求工具确认时，面板底部直接出现审批卡片（工具名、理由、「允许一次 / 拒绝」），和主界面审批 UI 读的是同一份 `PendingApproval` 状态。
 - 对话标题栏的「线程」按钮打开本会话的线程列表（按最近更新排序，点一行跳到对应线程页签）。
 - 线程页签标题是动态的：显示被回复回答的前 18 个字，同时开几条时能分清。
+- 线程页签使用持久资源地址保存锚点，重启后恢复；旧版缺少导航参数的页签显示线程列表，选择后可继续。
 - 线程面板的「带回主对话」把线程最后一条回答以引用块写进主对话输入框（不直接发送，你自己决定发不发、改不改）。
 - 线程输入框支持粘贴/拖拽图片，按宿主默认限制：最多 20 张、单张 20 MB；超过 2048px 长边或 4 MP 的图会先在浏览器里缩放（WebP，透明底转白）再发送。
 - 线程子会话继承父会话的 Agent 预设。新版宿主在分叉时继承；旧版宿主遗漏时，插件补写 `agent-preset/selected`，已有相同预设时跳过。

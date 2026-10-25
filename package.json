@@ -1,6 +1,6 @@
 {
   "name": "dsh-threads",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "Side-panel conversation threads and an optional Slack-style interface for DeepSeek Harness.",
   "type": "module",
   "main": "./index.js",
@@ -17,7 +17,7 @@
   "keywords": ["deepseek", "deepseek-harness", "dsh", "dsh-plugin", "threads", "slack-style"],
   "scripts": {
     "check": "node --check index.js && node --check client.js",
-    "test": "node --test test/client-store.test.js test/host-store.test.js test/store-integration.test.js test/slack-rendering.test.js test/thread-behavior.test.js test/thread-history.test.js test/shared-results.test.js",
+    "test": "node --test test/client-store.test.js test/host-store.test.js test/store-integration.test.js test/slack-rendering.test.js test/thread-behavior.test.js test/thread-history.test.js test/shared-results.test.js test/thread-navigation.test.js",
     "release:package": "python scripts/package-release.py"
   },
   "exports": {

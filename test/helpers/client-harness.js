@@ -101,7 +101,7 @@ export function loadClient(options = {}) {
     sessions: { binding: () => binding, retain: () => ({ ready: Promise.resolve(binding), release: noop }) },
     slots: { inject: (name, callback) => { callback(); return noop; }, register: () => noop },
     sidebarRightTabs: { register: () => noop },
-    sidebarRight: { openTab: noop, openTabIn: noop },
+    sidebarRight: { openTab: noop, openTabIn: noop, openResource: noop, openResourceIn: noop },
     uiWorkspace: { openSession: noop },
     workspaces: { unarchiveSession: async () => {} },
     remote: {},

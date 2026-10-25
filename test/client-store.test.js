@@ -7,6 +7,7 @@ import { loadClient, walk } from './helpers/client-harness.js';
 const source = await readFile(new URL('../client.js', import.meta.url), 'utf8');
 const STORE = 'dsh.threads.v1';
 const DRAFTS = 'dsh.threads.drafts.v1';
+const MIGRATED = 'dsh.threads.host-migration.v2';
 
 function deferred() {
   let resolve;
@@ -62,6 +63,58 @@ function loadStore({ fetch = async () => ({ ok: true, json: async () => ({ versi
     },
   };
 }
+
+test('first migration retains unsynced browser threads and drafts beside an existing Host store', async () => {
+  const writes = [];
+  const harness = loadStore({
+    initial: {
+      [STORE]: JSON.stringify({ local: { 42: { childId: 'local-child', updatedAt: 200 } }, shared: { 1: { childId: 'new-child', updatedAt: 300 } } }),
+      [DRAFTS]: JSON.stringify({ 'local:42': 'unsaved browser draft' }),
+    },
+    fetch: async (url, options = {}) => {
+      if (options.method) { writes.push(JSON.parse(options.body)); return { ok: true }; }
+      return { ok: true, json: async () => ({ version: 1, threads: { host: { 1: { childId: 'host-child' } }, shared: { 1: { childId: 'old-child', updatedAt: 100 } } }, drafts: { 'host:1': 'host draft' } }) };
+    },
+  });
+  await harness.api.loadPersisted();
+  assert.equal(harness.api.threadAt('local', 42)?.childId, 'local-child');
+  assert.equal(harness.api.threadAt('host', 1)?.childId, 'host-child');
+  assert.equal(harness.api.threadAt('shared', 1)?.childId, 'new-child');
+  assert.equal(harness.api.loadDraft('local:42'), 'unsaved browser draft');
+  assert.equal(harness.api.loadDraft('host:1'), 'host draft');
+  assert.equal(harness.localStorage.getItem(MIGRATED), null);
+  await harness.api.persistNow();
+  assert.equal(writes[0].threads.local[42].childId, 'local-child');
+  assert.equal(writes[0].drafts['local:42'], 'unsaved browser draft');
+  assert.equal(harness.localStorage.getItem(MIGRATED), '1');
+});
+
+test('after migration a stale browser cache does not resurrect Host deletions', async () => {
+  const harness = loadStore({
+    initial: { [MIGRATED]: '1', [STORE]: JSON.stringify({ stale: { 1: { childId: 'deleted-child' } } }), [DRAFTS]: JSON.stringify({ stale: 'already sent' }) },
+    fetch: async () => ({ ok: true, json: async () => ({ version: 1, threads: { retained: { 1: { childId: 'retained' } } }, drafts: {} }) }),
+  });
+  await harness.api.loadPersisted();
+  assert.equal(harness.api.threadAt('stale', 1), undefined);
+  assert.equal(harness.api.loadDraft('stale'), '');
+});
+
+test('the migration marker is committed only after the recovered state is saved', async () => {
+  let fail = true;
+  const harness = loadStore({
+    initial: { [STORE]: JSON.stringify({ recovered: { 1: { childId: 'recovered-child' } } }) },
+    fetch: async (url, options = {}) => options.method
+      ? { ok: !fail, status: fail ? 500 : 204 }
+      : { ok: true, json: async () => ({ version: 1, threads: { host: { 1: { childId: 'host-child' } } }, drafts: {} }) },
+  });
+  await harness.api.loadPersisted();
+  await harness.api.persistNow();
+  assert.equal(harness.localStorage.getItem(MIGRATED), null);
+  assert.equal(harness.api.threadAt('recovered', 1).childId, 'recovered-child');
+  fail = false;
+  await harness.api.persistNow();
+  assert.equal(harness.localStorage.getItem(MIGRATED), '1');
+});
 
 test('Host initialization preserves local edits, new keys and draft deletion made while GET is pending', async () => {
   const response = deferred();
