@@ -21,5 +21,7 @@ jobs:
           node-version: '22'
       - name: Check entry point syntax
         run: npm run check
+      - name: Run behavior regression tests
+        run: npm test
       - name: Check package contents
         run: npm pack --dry-run

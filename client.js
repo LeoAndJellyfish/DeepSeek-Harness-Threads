@@ -20,7 +20,7 @@ window.__ModuleLoader__.load({
 
     const PLUGIN_ID = 'dsh-threads';
     /** Keep in sync with package.json; the account Remote carries it as the client build. */
-    const PLUGIN_VERSION = '0.13.9';
+    const PLUGIN_VERSION = '0.14.0';
     /** Official DSH whale mark (50x50 favicon path), used only for the assistant avatar. */
     const WHALE_PATH = "M48.8354 10.0479C48.3232 9.79199 48.1025 10.2798 47.8032 10.5278C47.7007 10.6079 47.6143 10.7119 47.5273 10.8076C46.7793 11.624 45.9048 12.1597 44.7622 12.0957C43.0923 12 41.666 12.5356 40.4058 13.8398C40.1377 12.2319 39.2476 11.272 37.8926 10.6558C37.1836 10.3359 36.4668 10.0156 35.9702 9.31982C35.6235 8.82373 35.5293 8.27197 35.356 7.72754C35.2456 7.3999 35.1353 7.06396 34.7651 7.00781C34.3633 6.94385 34.2056 7.2876 34.0479 7.57568C33.418 8.75195 33.1733 10.0479 33.1973 11.3599C33.2524 14.312 34.4736 16.6641 36.8999 18.3359C37.1758 18.5278 37.2466 18.7197 37.1597 19C36.9946 19.5757 36.7974 20.1357 36.624 20.7119C36.5137 21.0801 36.3486 21.1597 35.9624 21C34.6309 20.4321 33.481 19.5918 32.4644 18.5757C30.7393 16.8721 29.1792 14.9917 27.2334 13.52C26.7764 13.1758 26.3193 12.856 25.8467 12.5518C23.8618 10.584 26.1069 8.96777 26.627 8.77588C27.1704 8.57568 26.8159 7.8877 25.0591 7.896C23.3022 7.90381 21.6953 8.50391 19.647 9.30371C19.3477 9.42383 19.0322 9.51172 18.7095 9.58398C16.8501 9.22363 14.9199 9.14355 12.9033 9.37598C9.10596 9.80762 6.07275 11.6396 3.84326 14.7681C1.16455 18.5278 0.53418 22.7998 1.30664 27.2559C2.11768 31.9521 4.46582 35.8398 8.07373 38.8799C11.8159 42.0322 16.1255 43.5762 21.041 43.2803C24.0269 43.104 27.3516 42.6963 31.1016 39.4561C32.0469 39.936 33.0396 40.1279 34.686 40.272C35.9546 40.3921 37.1758 40.208 38.1211 40.0078C39.6021 39.688 39.4995 38.2881 38.9639 38.0322C34.623 35.9678 35.5762 36.8081 34.71 36.1279C36.9155 33.4639 40.2402 30.6958 41.54 21.728C41.6426 21.0161 41.5557 20.5679 41.54 19.9917C41.5322 19.6396 41.6108 19.5039 42.0049 19.4639C43.0923 19.3359 44.1479 19.0317 45.1167 18.4878C47.9292 16.9199 49.064 14.3438 49.3315 11.2559C49.3711 10.7837 49.3237 10.2959 48.8354 10.0479ZM24.3262 37.8398C20.1196 34.4639 18.0791 33.3521 17.2358 33.3999C16.4482 33.4482 16.5898 34.3682 16.7632 34.9678C16.9443 35.5601 17.1812 35.9683 17.5117 36.4878C17.7402 36.832 17.8979 37.3442 17.2832 37.728C15.9282 38.584 13.5728 37.4399 13.4624 37.3838C10.7207 35.7358 8.42822 33.5601 6.81348 30.584C5.25342 27.7197 4.34766 24.6479 4.19775 21.3677C4.1582 20.5757 4.38672 20.2959 5.15869 20.1519C6.17529 19.96 7.22314 19.9199 8.23926 20.0718C12.5327 20.7119 16.1885 22.6719 19.2529 25.7759C21.002 27.5439 22.3252 29.6558 23.6885 31.7202C25.1377 33.9121 26.6978 36 28.6831 37.7119C29.3843 38.312 29.9434 38.7681 30.479 39.104C28.8643 39.2881 26.1699 39.3281 24.3262 37.8398ZM26.3433 24.6001C26.3433 24.248 26.6191 23.9678 26.9658 23.9678C27.0444 23.9678 27.1152 23.9839 27.1782 24.0078C27.2651 24.04 27.3438 24.0879 27.4067 24.1602C27.5171 24.272 27.5801 24.4321 27.5801 24.6001C27.5801 24.9521 27.3042 25.2319 26.9575 25.2319C26.6108 25.2319 26.3433 24.9521 26.3433 24.6001ZM32.6064 27.8799C32.2046 28.0479 31.8027 28.1919 31.4165 28.208C30.8179 28.2397 30.1641 27.9922 29.8096 27.688C29.2583 27.2158 28.8643 26.9521 28.6987 26.1279C28.6279 25.7759 28.6675 25.2319 28.7305 24.9199C28.8721 24.248 28.7144 23.8159 28.2495 23.4238C27.8716 23.104 27.3911 23.0161 26.8633 23.0161C26.666 23.0161 26.4849 22.9277 26.3511 22.856C26.1304 22.7441 25.9492 22.4639 26.1226 22.1201C26.1777 22.0078 26.4458 21.7358 26.5088 21.688C27.2256 21.272 28.0527 21.4077 28.8169 21.7197C29.5259 22.0161 30.0615 22.5601 30.834 23.3281C31.6216 24.2559 31.7632 24.5117 32.2124 25.208C32.5669 25.752 32.8901 26.312 33.1104 26.9521C33.2446 27.3521 33.0713 27.6802 32.6064 27.8799Z";
     const NS = 'threads';
@@ -32,7 +32,7 @@ window.__ModuleLoader__.load({
      * agent knows it is answering inside a side thread. The panel strips it
      * again, so the transcript stays clean for the user. */
     const THREAD_NOTE =
-      '<dsh-thread>侧边线程：你的回复只显示在主对话的线程面板里，主对话看不到。直接回答这条追问，不要假设自己在主对话中，也不要建议用户切换面板；不要在回复里提到这条说明。</dsh-thread>';
+      '<dsh-thread>侧边线程：在当前线程内完成这条追问并直接回复用户。主会话中的结果展示由界面处理；不要向主会话再次发送请求，不要在回复中提到这条说明。</dsh-thread>';
     const THREAD_NOTE_PATTERN = /^<dsh-thread>[\s\S]*?<\/dsh-thread>\s*/i;
 
     const ZH = {
@@ -56,11 +56,13 @@ window.__ModuleLoader__.load({
       'panel.placeholder': '回复这条线程…（Enter 发送，Shift+Enter 换行）',
       'panel.placeholderFirst': '写点什么，开始这条线程…（Enter 发送）',
       'panel.hint': 'Enter 发送 · Shift+Enter 换行',
-      'panel.alsoSend': '同时发到主对话',
-      'panel.alsoSendPrefix': '[来自线程] ',
+      'panel.shareToMain': '在主会话展示线程结果',
+      'panel.sharedImageQuestion': '图片追问（{count} 张）',
       'panel.lastReply': '最后回复 {when}',
       'panel.zoom': '点击放大',
       'panel.retry': '重试',
+      'panel.storeUnsaved': '尚未保存到主机，正在保留本地更改',
+      'panel.retrySave': '重试保存',
       'panel.stopHint': '正在回复，还可以继续输入',
       'panel.send': '发送',
       'panel.sending': '发送中',
@@ -113,11 +115,23 @@ window.__ModuleLoader__.load({
       'skin.steering': '插话',
       'skin.steeringExpand': '展开这条插话',
       'skin.steeringCollapse': '收起这条插话',
+      'skin.reasoning': '思考过程',
+      'skin.attachments': '{count} 个附件',
       'skin.today': '今天',
       'skin.yesterday': '昨天',
       'skin.avatarYou': '你',
       'skin.goalAuthor': '目标',
       'skin.goalRunning': '执行中…',
+      'shared.title': '线程结果',
+      'shared.queued': '排队中',
+      'shared.running': '回复中',
+      'shared.complete': '已完成',
+      'shared.error': '失败',
+      'shared.stopped': '已停止',
+      'shared.open': '打开线程',
+      'shared.tools': '工具：{names}',
+      'shared.hint': '结果展示于此；继续讨论可在线程中带回输入框。',
+      'shared.superseded': '此后收到新的输入，请打开线程查看后续回复。',
       'md.copy': '复制',
       'md.copied': '已复制',
       'md.code': '代码',
@@ -147,11 +161,13 @@ window.__ModuleLoader__.load({
       'panel.placeholder': 'Reply in this thread… (Enter to send, Shift+Enter for a new line)',
       'panel.placeholderFirst': 'Write the first reply… (Enter to send)',
       'panel.hint': 'Enter to send · Shift+Enter for a new line',
-      'panel.alsoSend': 'Also send to the main conversation',
-      'panel.alsoSendPrefix': '[from thread] ',
+      'panel.shareToMain': 'Show thread result in the main conversation',
+      'panel.sharedImageQuestion': 'Image question ({count} images)',
       'panel.lastReply': 'Last reply {when}',
       'panel.zoom': 'Click to zoom',
       'panel.retry': 'Retry',
+      'panel.storeUnsaved': 'Not saved to the host; keeping local changes.',
+      'panel.retrySave': 'Retry saving',
       'panel.stopHint': 'Replying — you can keep typing',
       'panel.send': 'Send',
       'panel.sending': 'Sending',
@@ -207,11 +223,23 @@ window.__ModuleLoader__.load({
       'skin.steering': 'Interjection',
       'skin.steeringExpand': 'Expand this interjection',
       'skin.steeringCollapse': 'Collapse this interjection',
+      'skin.reasoning': 'Reasoning',
+      'skin.attachments': '{count} attachments',
       'skin.today': 'Today',
       'skin.yesterday': 'Yesterday',
       'skin.avatarYou': 'Y',
       'skin.goalAuthor': 'Goal',
       'skin.goalRunning': 'Running…',
+      'shared.title': 'Thread result',
+      'shared.queued': 'Queued',
+      'shared.running': 'Replying',
+      'shared.complete': 'Completed',
+      'shared.error': 'Failed',
+      'shared.stopped': 'Stopped',
+      'shared.open': 'Open thread',
+      'shared.tools': 'Tools: {names}',
+      'shared.hint': 'Results appear here. Bring a result back to the composer from its thread to continue discussing it.',
+      'shared.superseded': 'New input followed this message. Open the thread to view the subsequent reply.',
       'md.copy': 'Copy',
       'md.copied': 'Copied',
       'md.code': 'Code',
@@ -229,11 +257,11 @@ window.__ModuleLoader__.load({
     function readStore() {
       try {
         const raw = window.localStorage.getItem(STORAGE_KEY);
-        if (!raw) return {};
+        if (!raw) return Object.create(null);
         const parsed = JSON.parse(raw);
-        return parsed && typeof parsed === 'object' ? parsed : {};
+        return copyRecord(recordObject(parsed));
       } catch (error) {
-        return {};
+        return Object.create(null);
       }
     }
 
@@ -269,6 +297,7 @@ window.__ModuleLoader__.load({
     function setSkin(next) {
       skin = next === 'slack' ? 'slack' : 'native';
       skinTouched = true;
+      pendingChanges.skin = skin;
       try {
         window.localStorage.setItem(SKIN_KEY, skin);
       } catch (error) {
@@ -475,6 +504,7 @@ window.__ModuleLoader__.load({
     function setThemeMode(next) {
       themeMode = next === 'jazz' ? 'jazz' : 'default';
       themeTouched = true;
+      pendingChanges.theme = themeMode;
       try {
         window.localStorage.setItem(THEME_KEY, themeMode);
       } catch (error) {
@@ -508,93 +538,227 @@ window.__ModuleLoader__.load({
     let persistTimer = null;
     let skinTouched = false;
     let themeTouched = false;
+    let pendingChanges = emptyChanges();
+    let savingChanges = null;
+    let loadingStore = null;
+    let persistRetries = 0;
+    let persistError = '';
+    const persistErrorListeners = new Set();
 
-    function persistNow() {
-      if (!persistEnabled) return;
+    function emptyChanges() {
+      return { threads: Object.create(null), drafts: Object.create(null) };
+    }
+
+    function copyRecord(value) {
+      return Object.assign(Object.create(null), value);
+    }
+
+    function setPersistError(value) {
+      if (persistError === value) return;
+      persistError = value;
+      notifyListeners(persistErrorListeners);
+    }
+
+    function subscribePersistError(listener) {
+      persistErrorListeners.add(listener);
+      return () => persistErrorListeners.delete(listener);
+    }
+
+    function usePersistError() {
+      return React.useSyncExternalStore(subscribePersistError, () => persistError);
+    }
+
+    function retryPersist() {
+      persistRetries = 0;
+      if (persistTimer !== null) window.clearTimeout(persistTimer);
+      persistTimer = null;
+      return persistEnabled ? persistNow() : loadPersisted();
+    }
+
+    function recordObject(value) {
+      return value !== null && typeof value === 'object' && !Array.isArray(value) ? value : {};
+    }
+
+    function notifyListeners(listeners) {
+      for (const listener of Array.from(listeners)) {
+        try {
+          listener();
+        } catch (error) {
+          /* one listener must not prevent other views from updating */
+        }
+      }
+    }
+
+    function cacheLocal(key, value) {
       try {
-        const body = JSON.stringify({ version: 1, threads: store, drafts, skin, theme: themeMode });
-        fetch(STORE_ROUTE, {
-          method: 'PUT',
-          headers: { 'content-type': 'application/json' },
-          body,
-        }).catch(() => {});
+        window.localStorage.setItem(key, value);
       } catch (error) {
-        /* fetch is unavailable in this shell */
+        /* Host persistence remains available if browser storage is full */
+      }
+    }
+
+    function changedKeys(before, after) {
+      const changes = Object.create(null);
+      for (const key of new Set([...Object.keys(before), ...Object.keys(after)])) {
+        if (JSON.stringify(before[key]) !== JSON.stringify(after[key])) {
+          changes[key] = after[key] === undefined ? null : after[key];
+        }
+      }
+      return changes;
+    }
+
+    function changedThreads(before, after) {
+      const changes = Object.create(null);
+      for (const parentId of new Set([...Object.keys(before), ...Object.keys(after)])) {
+        if (parentId === 'v') continue;
+        const bucket = changedKeys(recordObject(before[parentId]), recordObject(after[parentId]));
+        if (Object.keys(bucket).length > 0) changes[parentId] = bucket;
+      }
+      return changes;
+    }
+
+    function mergeChanges(older, newer) {
+      const threads = copyRecord(older.threads);
+      for (const parentId of Object.keys(newer.threads || {})) {
+        threads[parentId] = Object.assign(Object.create(null), threads[parentId], newer.threads[parentId]);
+      }
+      return { ...older, ...newer, threads, drafts: Object.assign(Object.create(null), older.drafts, newer.drafts) };
+    }
+
+    function applyKeyChanges(value, changes) {
+      const next = copyRecord(value);
+      for (const key of Object.keys(changes || {})) {
+        if (changes[key] === null) delete next[key];
+        else next[key] = changes[key];
+      }
+      return next;
+    }
+
+    function applyThreadChanges(value, changes) {
+      const next = copyRecord(value);
+      for (const parentId of Object.keys(changes || {})) {
+        const bucket = applyKeyChanges(recordObject(next[parentId]), changes[parentId]);
+        if (Object.keys(bucket).length > 0) next[parentId] = bucket;
+        else delete next[parentId];
+      }
+      return next;
+    }
+
+    function hasPendingChanges() {
+      return Object.keys(pendingChanges.threads).length > 0 ||
+        Object.keys(pendingChanges.drafts).length > 0 ||
+        pendingChanges.skin !== undefined || pendingChanges.theme !== undefined;
+    }
+
+    function setPersistTimer(delay, callback) {
+      if (persistTimer !== null) window.clearTimeout(persistTimer);
+      persistTimer = window.setTimeout(() => {
+        persistTimer = null;
+        return callback();
+      }, delay);
+    }
+
+    function reportPersistFailure(error) {
+      setPersistError(errorText(error));
+      console.warn('[dsh-threads] state remains unsaved after a failed store request:', errorText(error));
+      if (persistRetries < 3) {
+        const delay = 1000 * 2 ** persistRetries;
+        persistRetries += 1;
+        setPersistTimer(delay, () => persistEnabled ? persistNow() : loadPersisted());
+      }
+    }
+
+    async function persistNow() {
+      if (!persistEnabled || savingChanges || !hasPendingChanges()) return;
+      if (persistTimer !== null) window.clearTimeout(persistTimer);
+      persistTimer = null;
+      const changes = pendingChanges;
+      pendingChanges = emptyChanges();
+      savingChanges = changes;
+      let saved = false;
+      try {
+        const patch = { version: 1 };
+        if (Object.keys(changes.threads).length > 0) patch.threads = changes.threads;
+        if (Object.keys(changes.drafts).length > 0) patch.drafts = changes.drafts;
+        if (changes.skin !== undefined) patch.skin = changes.skin;
+        if (changes.theme !== undefined) patch.theme = changes.theme;
+        const response = await fetch(STORE_ROUTE, {
+          method: 'PATCH',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(patch),
+        });
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        persistRetries = 0;
+        setPersistError('');
+        saved = true;
+      } catch (error) {
+        // Changes made during this request win over the older failed patch.
+        pendingChanges = mergeChanges(changes, pendingChanges);
+        reportPersistFailure(error);
+      } finally {
+        savingChanges = null;
+        if (saved && hasPendingChanges()) setPersistTimer(250, persistNow);
       }
     }
 
     function schedulePersist() {
-      if (!persistEnabled) return;
-      if (persistTimer !== null) window.clearTimeout(persistTimer);
-      persistTimer = window.setTimeout(() => {
-        persistTimer = null;
-        persistNow();
-      }, 250);
+      persistRetries = 0;
+      if (!persistEnabled && loadingStore) return;
+      setPersistTimer(250, () => persistEnabled ? persistNow() : loadPersisted());
     }
 
     async function loadPersisted() {
-      let data;
-      try {
-        const response = await fetch(STORE_ROUTE, { headers: { accept: 'application/json' } });
-        if (!response.ok) return;
-        data = await response.json();
-      } catch (error) {
-        return;
-      }
-      if (data === null || typeof data !== 'object') return;
-      persistEnabled = true;
-      let changed = false;
-      if (data.threads && typeof data.threads === 'object' && Object.keys(data.threads).length > 0) {
-        store = data.threads;
-        storeVersion += 1;
-        changed = true;
-      }
-      if (data.drafts && typeof data.drafts === 'object' && Object.keys(data.drafts).length > 0) {
-        drafts = data.drafts;
-        changed = true;
-      }
-      if (!skinTouched && (data.skin === 'slack' || data.skin === 'native') && data.skin !== skin) {
-        skin = data.skin;
-        changed = true;
-      }
-      if (
-        !themeTouched &&
-        (data.theme === 'jazz' || data.theme === 'default') &&
-        data.theme !== themeMode
-      ) {
-        themeMode = data.theme;
+      if (persistEnabled) return;
+      if (loadingStore) return loadingStore;
+      const initialThreads = readStore();
+      const initialDrafts = readDrafts();
+      loadingStore = (async () => {
         try {
-          window.localStorage.setItem(THEME_KEY, themeMode);
+          const response = await fetch(STORE_ROUTE, { headers: { accept: 'application/json' } });
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          const data = await response.json();
+          if (data === null || typeof data !== 'object' || Array.isArray(data) || data.version !== 1) {
+            throw new Error('Invalid store response');
+          }
+          const hostThreads = recordObject(data.threads);
+          const hostDrafts = recordObject(data.drafts);
+          const migrating = Object.keys(hostThreads).every((key) => key === 'v') &&
+            Object.keys(hostDrafts).length === 0 &&
+            (!data.skin || data.skin === 'native') && (!data.theme || data.theme === 'default');
+          if (migrating) {
+            pendingChanges = mergeChanges({
+              threads: changedThreads({}, store), drafts: { ...drafts }, skin, theme: themeMode,
+            }, pendingChanges);
+          }
+          // Pending keys include tombstones, so a late GET cannot revive a deleted draft.
+          const cacheThreads = changedThreads(initialThreads, readStore());
+          const cacheDrafts = changedKeys(initialDrafts, readDrafts());
+          store = applyThreadChanges(applyThreadChanges(hostThreads, cacheThreads), pendingChanges.threads);
+          drafts = applyKeyChanges(applyKeyChanges(hostDrafts, cacheDrafts), pendingChanges.drafts);
+          if (!skinTouched && !migrating && (data.skin === 'slack' || data.skin === 'native')) skin = data.skin;
+          if (!themeTouched && !migrating && (data.theme === 'jazz' || data.theme === 'default')) themeMode = data.theme;
+          storeVersion += 1;
+          cacheLocal(STORAGE_KEY, JSON.stringify(store));
+          cacheLocal(DRAFTS_KEY, JSON.stringify(drafts));
+          cacheLocal(SKIN_KEY, skin);
+          cacheLocal(THEME_KEY, themeMode);
+          persistEnabled = true;
+          persistRetries = 0;
+          setPersistError('');
+          notifyListeners(storeListeners);
+          notifyListeners(draftListeners);
+          notifyListeners(skinListeners);
+          notifyListeners(themeModeListeners);
+          if (hasPendingChanges()) setPersistTimer(250, persistNow);
         } catch (error) {
-          /* in-memory preference only */
+          reportPersistFailure(error);
         }
-        for (const listener of Array.from(themeModeListeners)) {
-          try {
-            listener();
-          } catch (error) {
-            /* ignore */
-          }
-        }
-        changed = true;
+      })();
+      try {
+        await loadingStore;
+      } finally {
+        loadingStore = null;
       }
-      if (changed) {
-        for (const listener of Array.from(storeListeners)) {
-          try {
-            listener();
-          } catch (error) {
-            /* ignore */
-          }
-        }
-        for (const listener of Array.from(skinListeners)) {
-          try {
-            listener();
-          } catch (error) {
-            /* ignore */
-          }
-        }
-      }
-      // First start after the migration: push whatever local data exists.
-      if (!data.threads || Object.keys(data.threads).length === 0) schedulePersist();
     }
 
     function subscribeStore(listener) {
@@ -610,10 +774,14 @@ window.__ModuleLoader__.load({
     }
 
     function writeStore(next) {
+      pendingChanges = mergeChanges(pendingChanges, { threads: changedThreads(store, next), drafts: {} });
       store = next;
       storeVersion += 1;
       try {
-        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+        const dirty = mergeChanges(savingChanges || emptyChanges(), pendingChanges);
+        // Other windows can write before their storage event reaches this one.
+        const cached = applyThreadChanges(readStore(), dirty.threads);
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(cached));
       } catch (error) {
         /* storage full or disabled: the in-memory index still works */
       }
@@ -628,15 +796,18 @@ window.__ModuleLoader__.load({
     }
 
     function setThread(parentId, seq, value) {
-      const bucket = Object.assign({}, store[parentId] || {});
+      const bucket = copyRecord(recordObject(store[parentId]));
       bucket[String(seq)] = value;
-      writeStore(Object.assign({}, store, { v: 1, [parentId]: bucket }));
+      const next = copyRecord(store);
+      next.v = 1;
+      next[parentId] = bucket;
+      writeStore(next);
     }
 
     function patchThread(parentId, seq, patch) {
       const current = threadAt(parentId, seq);
       if (!current) return;
-      setThread(parentId, seq, Object.assign({}, current, patch));
+      setThread(parentId, seq, { ...current, ...patch });
     }
 
     function useThreadEntry(parentId, seq) {
@@ -703,15 +874,25 @@ window.__ModuleLoader__.load({
     function readDrafts() {
       try {
         const raw = window.localStorage.getItem(DRAFTS_KEY);
-        if (!raw) return {};
+        if (!raw) return Object.create(null);
         const parsed = JSON.parse(raw);
-        return parsed && typeof parsed === 'object' ? parsed : {};
+        return copyRecord(recordObject(parsed));
       } catch (error) {
-        return {};
+        return Object.create(null);
       }
     }
 
     let drafts = readDrafts();
+    const draftListeners = new Set();
+
+    function subscribeDrafts(listener) {
+      draftListeners.add(listener);
+      return () => draftListeners.delete(listener);
+    }
+
+    function useDraft(key) {
+      return React.useSyncExternalStore(subscribeDrafts, () => key ? loadDraft(key) : '');
+    }
 
     function draftKeyOf(parentId, seq) {
       return parentId + ':' + String(seq);
@@ -722,14 +903,50 @@ window.__ModuleLoader__.load({
     }
 
     function saveDraft(key, value) {
+      if (loadDraft(key) === value) return;
       if (value) drafts[key] = value;
       else delete drafts[key];
+      pendingChanges.drafts[key] = value || null;
       try {
-        window.localStorage.setItem(DRAFTS_KEY, JSON.stringify(drafts));
+        const dirty = mergeChanges(savingChanges || emptyChanges(), pendingChanges);
+        window.localStorage.setItem(DRAFTS_KEY, JSON.stringify(applyKeyChanges(readDrafts(), dirty.drafts)));
       } catch (error) {
         /* keep the in-memory copy */
       }
+      notifyListeners(draftListeners);
       schedulePersist();
+    }
+
+    function parseStorageValue(value) {
+      try {
+        return recordObject(JSON.parse(value || '{}'));
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function syncStorageEvent(event) {
+      if (event.storageArea && event.storageArea !== window.localStorage) return;
+      if (event.key === STORAGE_KEY) {
+        const incoming = changedThreads(parseStorageValue(event.oldValue), parseStorageValue(event.newValue));
+        const dirty = mergeChanges(savingChanges || emptyChanges(), pendingChanges);
+        store = applyThreadChanges(applyThreadChanges(store, incoming), dirty.threads);
+        storeVersion += 1;
+        notifyListeners(storeListeners);
+      } else if (event.key === DRAFTS_KEY) {
+        const incoming = changedKeys(parseStorageValue(event.oldValue), parseStorageValue(event.newValue));
+        const dirty = mergeChanges(savingChanges || emptyChanges(), pendingChanges);
+        drafts = applyKeyChanges(applyKeyChanges(drafts, incoming), dirty.drafts);
+        notifyListeners(draftListeners);
+      } else if (event.key === SKIN_KEY) {
+        if (pendingChanges.skin !== undefined || savingChanges?.skin !== undefined) return;
+        skin = event.newValue === 'slack' ? 'slack' : 'native';
+        notifyListeners(skinListeners);
+      } else if (event.key === THEME_KEY) {
+        if (pendingChanges.theme !== undefined || savingChanges?.theme !== undefined) return;
+        themeMode = event.newValue === 'jazz' ? 'jazz' : 'default';
+        notifyListeners(themeModeListeners);
+      }
     }
 
     /* ------------------------------------------------------------------ *
@@ -952,6 +1169,7 @@ window.__ModuleLoader__.load({
             images,
             time: event.time,
             seq: event.seq,
+            requestId: typeof source?.rpcId === 'string' ? source.rpcId : undefined,
             key: 'user:' + event.seq,
           });
         } else if (event.type === 'assistant/message') {
@@ -988,29 +1206,220 @@ window.__ModuleLoader__.load({
       return items;
     }
 
+    // Retain failed text, image bytes and request identity while panels switch.
+    const failedDeliveries = new Map();
+    const activeDeliveries = new Set();
+
+    function createThreadRequestId() {
+      if (typeof window.crypto?.randomUUID === 'function') return window.crypto.randomUUID();
+      const bytes = new Uint8Array(16);
+      if (typeof window.crypto?.getRandomValues === 'function') window.crypto.getRandomValues(bytes);
+      else for (let index = 0; index < bytes.length; index += 1) bytes[index] = Math.floor(Math.random() * 256);
+      bytes[6] = (bytes[6] & 15) | 64;
+      bytes[8] = (bytes[8] & 63) | 128;
+      const hex = Array.from(bytes, (byte) => byte.toString(16).padStart(2, '0')).join('');
+      return hex.slice(0, 8) + '-' + hex.slice(8, 12) + '-' + hex.slice(12, 16) + '-' + hex.slice(16, 20) + '-' + hex.slice(20);
+    }
+
+    function queueSharedReply(parentId, anchorSeq, request, imageQuestion) {
+      if (!request.shareToMain) return;
+      const current = threadAt(parentId, anchorSeq);
+      if (!current) return;
+      const sharedReplies = copyRecord(recordObject(current.sharedReplies));
+      if (Object.hasOwn(sharedReplies, request.requestId)) return;
+      const now = Date.now();
+      sharedReplies[request.requestId] = {
+        id: request.requestId,
+        question: String(request.text || imageQuestion || '').slice(0, 1000),
+        createdAt: now,
+        updatedAt: now,
+        status: 'queued',
+        answer: '',
+        userSeq: null,
+        assistantSeq: null,
+      };
+      patchThread(parentId, anchorSeq, { sharedReplies });
+    }
+
+    /** Count the child's own replies and use completion events for recency. */
+    function threadActivity(entries, anchorSeq) {
+      let replies = 0;
+      let updatedAt = 0;
+      for (const item of entries || []) {
+        const event = item && item.type === 'event' ? item.event : null;
+        if (!event || typeof event.seq !== 'number' || event.seq <= anchorSeq) continue;
+        if (event.surfaceOp !== undefined && event.surfaceOp !== 'append') continue;
+        if (event.type === 'user/message') {
+          if (event.data?.source && event.data.source.kind !== 'user') continue;
+          replies += 1;
+        } else if (!['assistant/message', 'tool/call', 'turn/end'].includes(event.type)) {
+          continue;
+        }
+        if (typeof event.time === 'number' && event.time > updatedAt) updatedAt = event.time;
+      }
+      return { replies, updatedAt };
+    }
+
+    /** Project explicitly shared requests onto passive cards in the parent UI. */
+    function syncSharedReplies(parentId, anchorSeq, entries, running) {
+      const entry = threadAt(parentId, anchorSeq);
+      const registered = new Map(Object.entries(recordObject(entry?.sharedReplies))
+        .filter(([, value]) => value && typeof value === 'object' && !Array.isArray(value)));
+      if (registered.size === 0) return;
+      const changes = new Map();
+      let active = null;
+      let inTurn = false;
+      const hasAnswer = () => Boolean(active && (active.text.length || active.liveText));
+      const touch = (event) => {
+        if (active && typeof event?.time === 'number') active.updatedAt = Math.max(active.updatedAt, event.time);
+      };
+      const finish = (status, event, outcome = '') => {
+        if (!active) return;
+        touch(event);
+        const previous = registered.get(active.id);
+        const text = active.text.concat(active.liveText ? [active.liveText] : []).join('\n\n').slice(0, 12000);
+        const next = {
+          ...previous, status, answer: text, userSeq: active.userSeq,
+          assistantSeq: active.assistantSeq, updatedAt: active.updatedAt,
+          tools: active.tools, error: active.error, outcome,
+        };
+        if (JSON.stringify(previous) !== JSON.stringify(next)) changes.set(active.id, next);
+        active = null;
+      };
+      const ordered = (entries || []).filter((item) =>
+        item && (item.type === 'event' || item.type === 'transient') &&
+        typeof item.event?.seq === 'number' && item.event.seq > anchorSeq &&
+        (item.event.surfaceOp === undefined || item.event.surfaceOp === 'append'))
+        .slice().sort((left, right) => left.event.seq - right.event.seq);
+      for (const item of ordered) {
+        const event = item.event;
+        const data = event.data || {};
+        if (event.type === 'turn/start') {
+          finish('stopped', event);
+          inTurn = true;
+          continue;
+        }
+        if (event.type === 'user/message') {
+          if (data.source && data.source.kind !== 'user') continue;
+          const hadAnswer = hasAnswer();
+          finish(hadAnswer ? 'complete' : 'stopped', event, hadAnswer ? '' : 'superseded');
+          const id = data.source?.rpcId;
+          const previous = typeof id === 'string' ? registered.get(id) : null;
+          if (previous) active = {
+            id, userSeq: event.seq, assistantSeq: null, text: [], liveText: '', liveAttempt: null,
+            tools: [], error: '', updatedAt: Math.max(previous.updatedAt || previous.createdAt || 0, event.time || 0),
+          };
+          continue;
+        }
+        if (event.type === 'turn/end') {
+          if (active) {
+            const reason = data.reason || {};
+            const status = reason.kind === 'error' ? 'error' :
+              ['aborted', 'interrupted', 'blocked', 'cancelled', 'max-tokens'].includes(reason.kind) ? 'stopped' : 'complete';
+            if (status === 'error') active.error = String(reason.message || reason.code || '').slice(0, 1000);
+            finish(status, event);
+          }
+          inTurn = false;
+          continue;
+        }
+        if (!active) continue;
+        if (event.type === 'assistant/live-chunk') {
+          const chunk = data.chunk || {};
+          if (active.liveAttempt !== data.attemptId) {
+            active.liveAttempt = data.attemptId;
+            active.liveText = '';
+          }
+          if (chunk.type === 'text-delta' && typeof chunk.text === 'string') {
+            active.liveText = (active.liveText + chunk.text).slice(0, 12000);
+            touch(event);
+          }
+        } else if (event.type === 'assistant/message') {
+          const text = textOfContent(data.message?.content);
+          if (text) active.text.push(text);
+          active.assistantSeq = event.seq;
+          // Settlement can briefly coexist with its transient chunks.
+          active.liveText = '';
+          active.liveAttempt = null;
+          touch(event);
+        } else if (event.type === 'tool/call') {
+          const name = typeof data.name === 'string' ? data.name.slice(0, 120) : '';
+          if (name && !active.tools.includes(name) && active.tools.length < 20) active.tools.push(name);
+          touch(event);
+        }
+      }
+      if (active) finish(running || inTurn || active.liveText ? 'running' : hasAnswer() ? 'complete' : 'queued');
+      if (changes.size === 0) return;
+      const sharedReplies = copyRecord(recordObject(entry.sharedReplies));
+      for (const [id, value] of changes) sharedReplies[id] = value;
+      patchThread(parentId, anchorSeq, { sharedReplies });
+    }
+
+    function firstHistorySeq(windowState) {
+      let first;
+      for (const item of windowState?.entries || []) {
+        const seq = item?.type === 'event' ? item.event?.seq : undefined;
+        if (typeof seq === 'number' && (first === undefined || seq < first)) first = seq;
+      }
+      return first;
+    }
+
+    /** A tail window is exact only after it reaches the child's own suffix. */
+    function threadHistoryComplete(binding, anchorSeq, windowState = windowOf(binding)) {
+      if (!binding || !windowState || !Number.isFinite(anchorSeq)) return false;
+      const first = firstHistorySeq(windowState);
+      if (first !== undefined && first <= anchorSeq + 1) return true;
+      if (typeof windowState.hasMore === 'boolean') return !windowState.hasMore;
+      return windowState === windowOf(binding) && binding.session.getSnapshot?.()?.hasMore === false;
+    }
+
+    /** Page back through this thread, stopping before inherited parent history. */
+    async function loadThreadHistory(binding, anchorSeq, cancelled = () => false) {
+      if (!binding || !Number.isFinite(anchorSeq)) return false;
+      while (!cancelled()) {
+        const before = windowOf(binding);
+        if (threadHistoryComplete(binding, anchorSeq, before)) return true;
+        const hasMore = before?.hasMore ?? binding.session.getSnapshot?.()?.hasMore;
+        if (hasMore !== true ||
+            typeof binding.session.loadOlder !== 'function') return false;
+        const first = firstHistorySeq(before);
+        try {
+          await binding.session.loadOlder();
+        } catch (error) {
+          return false;
+        }
+        if (cancelled()) return false;
+        const after = windowOf(binding);
+        if (threadHistoryComplete(binding, anchorSeq, after)) return true;
+        const next = firstHistorySeq(after);
+        // A refused/failed page must not spin or replace a trusted total.
+        if (next === undefined || (first !== undefined && next >= first)) return false;
+      }
+      return false;
+    }
+
     /* ------------------------------------------------------------------ *
      * Hooks
      * ------------------------------------------------------------------ */
 
     function useRetainedBinding(client, childId) {
-      const [state, setState] = React.useState({ binding: null, error: '' });
+      const [state, setState] = React.useState({ childId: '', binding: null, error: '' });
       React.useEffect(() => {
-        setState({ binding: null, error: '' });
+        setState({ childId, binding: null, error: '' });
         if (!childId) return undefined;
         let alive = true;
         let reference;
         try {
           reference = client.sessions.retain(childId, { source: RETAIN_SOURCE });
         } catch (error) {
-          setState({ binding: null, error: errorText(error) });
+          setState({ childId, binding: null, error: errorText(error) });
           return undefined;
         }
         reference.ready
           .then((binding) => {
-            if (alive) setState({ binding, error: '' });
+            if (alive) setState({ childId, binding, error: '' });
           })
           .catch((error) => {
-            if (alive) setState({ binding: null, error: errorText(error) });
+            if (alive) setState({ childId, binding: null, error: errorText(error) });
           });
         return function release() {
           alive = false;
@@ -1021,7 +1430,9 @@ window.__ModuleLoader__.load({
           }
         };
       }, [client, childId]);
-      return state;
+      // Effects run after render; never expose the previous child's binding in
+      // the first render of a newly selected thread.
+      return state.childId === childId ? state : { childId, binding: null, error: '' };
     }
 
     function useEventWindow(binding) {
@@ -1188,6 +1599,16 @@ window.__ModuleLoader__.load({
       '.dt-icon-action{width:24px;height:24px;display:inline-grid;place-items:center;border:0;border-radius:4px;background:transparent;color:inherit;cursor:pointer;padding:0;opacity:.75}',
       '.dt-icon-action:hover{background:var(--dsw-alias-bg-layer-2);opacity:1}',
       '.dt-thread-card{margin:2px 0 6px;max-width:520px;border:1px solid var(--dsw-alias-border-l1);border-radius:8px;background:var(--dsw-alias-bg-layer-1);overflow:hidden}',
+      '.dt-shared-results{display:flex;flex-direction:column;gap:8px;padding:0 10px 10px}',
+      '.dt-shared-result{min-width:0;padding:9px 10px;border:1px solid var(--dsw-alias-border-l1);border-radius:6px;background:var(--dsw-alias-bg-base)}',
+      '.dt-shared-head{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--dsw-alias-label-secondary)}',
+      '.dt-shared-title{font-weight:600;color:var(--dsw-alias-label-primary)}',
+      '.dt-shared-status{margin-left:auto}',
+      '.dt-shared-result[data-status="error"] .dt-shared-status,.dt-shared-error{color:var(--dsw-alias-state-error-primary)}',
+      '.dt-shared-question{margin-top:5px;font-size:12px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--dsw-alias-label-secondary)}',
+      '.dt-shared-answer{margin-top:7px;max-height:420px;overflow:auto;font-size:13px;line-height:1.65;overflow-wrap:anywhere;color:var(--dsw-alias-label-primary)}',
+      '.dt-shared-tools,.dt-shared-hint,.dt-shared-error{margin-top:6px;font-size:11px;line-height:1.6;overflow-wrap:anywhere}',
+      '.dt-shared-tools,.dt-shared-hint{color:var(--dsw-alias-label-secondary)}',
       '.dt-thread-card:hover{border-color:var(--dsw-alias-border-l2)}',
       '.dt-thread-card-main{display:flex;align-items:center;gap:8px;width:100%;padding:6px 10px;border:0;background:transparent;color:inherit;font:inherit;font-size:12px;text-align:left;cursor:pointer}',
       '.dt-thread-card-avatars{display:inline-flex;align-items:center;flex:none}',
@@ -1325,6 +1746,9 @@ window.__ModuleLoader__.load({
       '.sk-action:hover{background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-primary)}',
       '.sk-text{font-size:13px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}',
       '.sk-text-md{white-space:normal}',
+      '.sk-reasoning{margin:3px 0 6px;color:var(--dsw-alias-label-secondary)}',
+      '.sk-reasoning-summary{cursor:pointer;font-size:12px;line-height:1.6}',
+      '.sk-reasoning-body{margin-top:6px;padding-left:10px;border-left:2px solid var(--dsw-alias-border-l1)}',
       '.sk-files{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}',
       '.sk-file{display:inline-flex;align-items:center;gap:6px;max-width:100%;padding:3px 7px;border:1px solid var(--dsw-alias-border-l1);border-radius:4px;background:var(--dsw-alias-bg-layer-1);font-size:11px;line-height:1.5;color:var(--dsw-alias-label-primary)}',
       '.sk-file svg{flex:none;color:var(--dsw-alias-label-secondary)}',
@@ -1419,20 +1843,8 @@ window.__ModuleLoader__.load({
           return () => style.remove();
         }, 'threads: styles');
         ctx.effect(() => {
-          const resync = () => {
-            store = readStore();
-            storeVersion += 1;
-            drafts = readDrafts();
-            for (const listener of Array.from(storeListeners)) {
-              try {
-                listener();
-              } catch (error) {
-                /* ignore */
-              }
-            }
-          };
-          window.addEventListener('storage', resync);
-          return () => window.removeEventListener('storage', resync);
+          window.addEventListener('storage', syncStorageEvent);
+          return () => window.removeEventListener('storage', syncStorageEvent);
         }, 'threads: storage sync');
 
         function openThreadPanel(sessionId, seq) {
@@ -1450,12 +1862,12 @@ window.__ModuleLoader__.load({
           }
         }
 
-        async function promptSession(binding, text, images) {
+        async function promptSession(binding, text, images, requestId) {
           const parts = [{ type: 'text', text: THREAD_NOTE + '\n\n' + text }];
           for (const image of images || []) {
             parts.push({ type: 'image', mediaType: image.mediaType, data: image.data, name: image.name });
           }
-          const result = await binding.session.prompt(parts, 'queue');
+          const result = await binding.session.prompt(parts, 'queue', undefined, requestId);
           if (result && result.ok === false) {
             throw new Error((result.error && result.error.message) || t('panel.sendFailed'));
           }
@@ -1506,6 +1918,62 @@ window.__ModuleLoader__.load({
           );
         }
 
+        /** Observe shared child output without sending anything into the parent. */
+        function SharedThreadResults(props) {
+          const parentId = props.sessionId;
+          const anchorSeq = typeof props.seq === 'number' ? props.seq : Number(props.anchorSeq ?? props.seq);
+          const entry = useThreadEntry(parentId, anchorSeq);
+          const sharedReplies = recordObject(entry?.sharedReplies);
+          const hasShares = Object.keys(sharedReplies).length > 0;
+          const childId = hasShares && typeof entry?.childId === 'string' ? entry.childId : '';
+          const retained = useRetainedBinding(ctx, childId);
+          const binding = retained.binding;
+          const windowState = useEventWindow(binding);
+          const snapshot = useSessionSnapshot(binding);
+          const { labels } = useMarkdownLabels();
+          React.useEffect(() => {
+            if (!binding || !Number.isFinite(anchorSeq)) return undefined;
+            let cancelled = false;
+            void loadThreadHistory(binding, anchorSeq, () => cancelled);
+            return () => { cancelled = true; };
+          }, [binding, anchorSeq]);
+          React.useEffect(() => {
+            if (!binding || !hasShares) return;
+            syncSharedReplies(parentId, anchorSeq, windowState?.entries, Boolean(snapshot?.running));
+          }, [binding, hasShares, parentId, anchorSeq, windowState, snapshot?.running, entry?.sharedReplies]);
+          if (!hasShares) return null;
+          const results = Object.entries(sharedReplies)
+            .filter(([, value]) => value && typeof value === 'object')
+            .sort(([leftId, left], [rightId, right]) => (left.createdAt || 0) - (right.createdAt || 0) || leftId.localeCompare(rightId));
+          return h(
+            'div',
+            { className: 'dt-shared-results' },
+            results.map(([id, result]) => h(
+              'article',
+              { key: id, className: 'dt-shared-result', 'data-share-id': id, 'data-status': result.status || 'queued' },
+              h(
+                'div',
+                { className: 'dt-shared-head' },
+                h('span', { className: 'dt-shared-title' }, t('shared.title')),
+                h('span', { className: 'dt-shared-status', role: 'status' }, t('shared.' + (result.status || 'queued'))),
+                h('button', { type: 'button', className: 'dt-link', onClick: () => openThreadPanel(parentId, anchorSeq) }, t('shared.open')),
+              ),
+              result.question ? h('div', { className: 'dt-shared-question' }, result.question) : null,
+              result.answer ? h(
+                'div',
+                { className: 'dt-shared-answer' },
+                MarkdownText ? h(MarkdownText, { text: result.answer, labels, streaming: result.status === 'running' }) : result.answer,
+              ) : null,
+              Array.isArray(result.tools) && result.tools.length > 0
+                ? h('div', { className: 'dt-shared-tools' }, t('shared.tools', { names: result.tools.join(' · ') }))
+                : null,
+              result.status === 'error' && result.error ? h('div', { className: 'dt-shared-error' }, result.error) : null,
+              result.outcome === 'superseded' ? h('div', { className: 'dt-shared-hint' }, t('shared.superseded')) : null,
+            )),
+            h('div', { className: 'dt-shared-hint' }, t('shared.hint')),
+          );
+        }
+
         /** Persistent "N replies" line under a turn that already has a thread. */
         function ThreadRepliesLine(props) {
           const sessionId = props.sessionId;
@@ -1529,25 +1997,17 @@ window.__ModuleLoader__.load({
                 reference = ctx.sessions.retain(childId, { source: RETAIN_SOURCE });
                 const binding = await reference.ready;
                 if (cancelled) return;
+                const complete = await loadThreadHistory(binding, seq, () => cancelled);
+                if (cancelled) return;
                 const state = binding.eventSource.getSnapshot();
                 const entries = state && Array.isArray(state.entries) ? state.entries : [];
-                let count = 0;
-                let last = 0;
-                for (const item of entries) {
-                  if (!item || item.type !== 'event' || !item.event) continue;
-                  if (item.event.type !== 'user/message') continue;
-                  count += 1;
-                  if (typeof item.event.time === 'number' && item.event.time > last) {
-                    last = item.event.time;
-                  }
-                }
-                if (count > 0) {
-                  patchThread(sessionId, seq, {
-                    replies: count,
-                    updatedAt: last || Date.now(),
-                    seenAt: Date.now(),
-                  });
-                }
+                const activity = threadActivity(entries, seq);
+                const current = threadAt(sessionId, seq);
+                if (!current || current.childId !== childId) return;
+                const patch = {};
+                if (complete && activity.replies !== current.replies) patch.replies = activity.replies;
+                if (activity.updatedAt > (current.updatedAt || 0)) patch.updatedAt = activity.updatedAt;
+                if (Object.keys(patch).length > 0) patchThread(sessionId, seq, patch);
               } catch (error) {
                 /* a missing window leaves the persisted count unchanged */
               } finally {
@@ -1605,6 +2065,7 @@ window.__ModuleLoader__.load({
                 : null,
               h('span', { className: 'dt-thread-card-chevron', 'aria-hidden': true }, h(ChevronGlyph, null)),
             ),
+            h(SharedThreadResults, { sessionId, seq }),
           );
         }
 
@@ -2150,27 +2611,7 @@ window.__ModuleLoader__.load({
               attachments.length > 0
                 ? h(MessageImages, { sessionId: props.sessionId, attachments })
                 : null,
-              files.length > 0
-                ? h(
-                    'div',
-                    { className: 'sk-files' },
-                    files.map((file, index) =>
-                      h(
-                        'span',
-                        { className: 'sk-file', key: String(index), title: file.name || '' },
-                        h(FileGlyph, null),
-                        h('span', { className: 'sk-file-name' }, file.name || 'file'),
-                        h(
-                          'span',
-                          { className: 'sk-file-meta' },
-                          [extensionOf(file.name), formatBytes(file.bytes)]
-                            .filter(Boolean)
-                            .join(' · '),
-                        ),
-                      ),
-                    ),
-                  )
-                : null,
+              renderSlackFiles(files),
               referenceLabels.length > 0 || skillNames.length > 0
                 ? h(
                     'div',
@@ -2286,20 +2727,26 @@ window.__ModuleLoader__.load({
           const node = props.node || {};
           const data = node.data || {};
           const blocks = Array.isArray(data.blocks) ? data.blocks : [];
-          const text = blocks
+          const reasoningOnly = props.groupPart === 'reasoning';
+          const reasoning = props.groupPart === 'response' ? '' : blocks
+            .filter((block) => block && block.kind === 'reasoning' && typeof block.text === 'string')
+            .map((block) => block.text)
+            .join('\n\n');
+          const text = reasoningOnly ? '' : blocks
             .filter((block) => block && block.kind === 'text')
             .map((block) => block.text)
             .join('\n\n');
-          const attachments = blocks
+          const attachments = reasoningOnly ? [] : blocks
             .filter((block) => block && block.kind === 'image' && block.attachment)
             .map((block) => block.attachment);
           const { labels, active } = useMarkdownLabels();
           const canFork =
             typeof props.useAccess === 'function' ? props.useAccess('session/fork') : false;
-          if (props.groupPart === 'reasoning') return null;
-          if (!text && attachments.length === 0) return null;
+          if (!text && !reasoning.trim() && attachments.length === 0) return null;
           const seq =
-            data.finalNode && typeof data.finalNode.seq === 'number' ? data.finalNode.seq : undefined;
+            !reasoningOnly && data.finalNode && typeof data.finalNode.seq === 'number'
+              ? data.finalNode.seq
+              : undefined;
           const time = nodeTime(node, data);
           return h(
             'div',
@@ -2317,6 +2764,24 @@ window.__ModuleLoader__.load({
                 h('span', { className: 'sk-author' }, 'DSH'),
                 time ? h('span', { className: 'sk-time' }, clockText(time, active)) : null,
               ),
+              reasoning.trim()
+                ? h(
+                    'details',
+                    { className: 'sk-reasoning' },
+                    h('summary', { className: 'sk-reasoning-summary' }, t('skin.reasoning')),
+                    h(
+                      'div',
+                      { className: 'sk-text sk-text-md sk-reasoning-body' },
+                      MarkdownText
+                        ? h(MarkdownText, {
+                            text: reasoning,
+                            labels,
+                            streaming: data.status === 'running',
+                          })
+                        : reasoning,
+                    ),
+                  )
+                : null,
               text
                 ? h(
                     'div',
@@ -2337,7 +2802,7 @@ window.__ModuleLoader__.load({
             h(
               'div',
               { className: 'sk-actions' },
-              h(SlackCopyButton, { text }),
+              h(SlackCopyButton, { text: text || reasoning }),
               seq !== undefined
                 ? h(
                     SlackAction,
@@ -2362,6 +2827,28 @@ window.__ModuleLoader__.load({
           );
         }
 
+        /** Shared file cards for ordinary user messages and expanded steering. */
+        function renderSlackFiles(files) {
+          if (files.length === 0) return null;
+          return h(
+            'div',
+            { className: 'sk-files' },
+            files.map((file, index) =>
+              h(
+                'span',
+                { className: 'sk-file', key: String(index), title: file.name || '' },
+                h(FileGlyph, null),
+                h('span', { className: 'sk-file-name' }, file.name || 'file'),
+                h(
+                  'span',
+                  { className: 'sk-file-meta' },
+                  [extensionOf(file.name), formatBytes(file.bytes)].filter(Boolean).join(' · '),
+                ),
+              ),
+            ),
+          );
+        }
+
         /** Compact, collapsible renderer for a message inserted mid-turn. */
         function SlackSteeringNode(props) {
           const node = props.node || {};
@@ -2371,10 +2858,17 @@ window.__ModuleLoader__.load({
             .filter((block) => block && block.type === 'text')
             .map((block) => block.text)
             .join('\n\n');
+          const attachments = content
+            .filter((block) => block && block.type === 'image' && block.attachment)
+            .map((block) => block.attachment);
+          const files = content
+            .filter((block) => block && block.type === 'file' && block.attachment)
+            .map((block) => block.attachment);
+          const attachmentCount = attachments.length + files.length;
           const { active } = useMarkdownLabels();
           const time = nodeTime(node, data);
           const [expanded, setExpanded] = React.useState(false);
-          if (!text) return null;
+          if (!text && attachmentCount === 0) return null;
           return h(
             'div',
             { className: 'sk-row sk-steering', 'data-role': 'steering', 'data-expanded': expanded ? '1' : '0' },
@@ -2395,7 +2889,7 @@ window.__ModuleLoader__.load({
                 h(
                   'span',
                   { className: expanded ? 'sk-steer-text is-open' : 'sk-steer-text' },
-                  text,
+                  text || t('skin.attachments', { count: attachmentCount }),
                 ),
                 time ? h('span', { className: 'sk-time' }, clockText(time, active)) : null,
                 h(
@@ -2404,6 +2898,10 @@ window.__ModuleLoader__.load({
                   h(ChevronGlyph, null),
                 ),
               ),
+              expanded && attachments.length > 0
+                ? h(MessageImages, { sessionId: props.sessionId, attachments })
+                : null,
+              expanded ? renderSlackFiles(files) : null,
             ),
           );
         }
@@ -2560,6 +3058,7 @@ window.__ModuleLoader__.load({
         function ThreadPanel(props) {
           const useTabInfo = props.useTabInfo;
           const sessionId = props.sessionId;
+          const persistenceProblem = usePersistError();
           const info = typeof useTabInfo === 'function' ? useTabInfo() : null;
           const params =
             info && info.tab && info.tab.navigation && info.tab.navigation.params
@@ -2651,50 +3150,91 @@ window.__ModuleLoader__.load({
           }, [items]);
 
           const draftKey = validAnchor ? draftKeyOf(parentId, anchorSeq) : '';
-          const [draft, setDraft] = React.useState(() => (draftKey ? loadDraft(draftKey) : ''));
+          const draft = useDraft(draftKey);
+          const setDraft = React.useCallback((value) => {
+            if (draftKey) saveDraft(draftKey, value);
+          }, [draftKey]);
           const [images, setImages] = React.useState([]);
           const [broughtBack, setBroughtBack] = React.useState(false);
-          const [alsoSend, setAlsoSend] = React.useState(false);
+          const [shareToMain, setShareToMain] = React.useState(false);
           const [sending, setSending] = React.useState(false);
           const [answering, setAnswering] = React.useState(false);
           const [failure, setFailure] = React.useState('');
+          const [retryRequest, setRetryRequest] = React.useState(null);
+          const attemptRef = React.useRef(null);
+          const activeDraftKey = React.useRef(draftKey);
+          activeDraftKey.current = draftKey;
           const listRef = React.useRef(null);
           const stickRef = React.useRef(true);
           const inputRef = React.useRef(null);
           const fileRef = React.useRef(null);
 
           React.useEffect(() => {
-            const next = draftKey ? loadDraft(draftKey) : '';
-            setDraft(next);
+            setFailure('');
+            const failed = failedDeliveries.get(draftKey);
+            if (failed?.stage === 'parent') failedDeliveries.delete(draftKey);
+            setRetryRequest(failed?.stage === 'parent' ? null : failed || null);
+            setSending(false);
+            setShareToMain(false);
+            setImages([]);
+            attemptRef.current = null;
+          }, [draftKey]);
+
+          React.useEffect(() => {
             requestAnimationFrame(() => {
               const element = inputRef.current;
               if (!element) return;
               element.style.height = 'auto';
-              if (next) element.style.height = Math.min(element.scrollHeight, 120) + 'px';
+              if (draft) element.style.height = Math.min(element.scrollHeight, 120) + 'px';
             });
-          }, [draftKey]);
+          }, [draftKey, draft]);
 
           const updateDraft = (value) => {
             setDraft(value);
-            if (draftKey) saveDraft(draftKey, value);
           };
 
           const running = Boolean(snapshot && snapshot.running);
           const promptError = snapshot && snapshot.promptError ? errorText(snapshot.promptError.error) : '';
-          const problem = failure || retained.error || promptError;
+          const failedRequest = retryRequest || failedDeliveries.get(draftKey);
+          const pendingRequest = failedRequest?.stage === 'parent' ? null : failedRequest;
+          const problem = failure || (pendingRequest ? pendingRequest.error || t('panel.sendFailed') : '') ||
+            retained.error || promptError;
 
           React.useEffect(() => {
-            if (!entry || !childId) return;
-            const count = items.reduce((total, item) => total + (item.kind === 'user' ? 1 : 0), 0);
-            const lastTime = items.length > 0 ? items[items.length - 1].time : 0;
+            const current = threadAt(parentId, anchorSeq);
+            if (!current || !Object.hasOwn(current, 'pendingMain')) return;
+            const { pendingMain: ignored, ...next } = current;
+            setThread(parentId, anchorSeq, next);
+          }, [parentId, anchorSeq, entry?.pendingMain]);
+
+          React.useEffect(() => {
+            if (typeof syncSharedReplies === 'function') {
+              syncSharedReplies(parentId, anchorSeq, windowState?.entries, running);
+            }
+          }, [parentId, anchorSeq, windowState, running, entry?.sharedReplies]);
+
+          React.useEffect(() => {
+            if (!binding || !validAnchor) return undefined;
+            let cancelled = false;
+            void loadThreadHistory(binding, anchorSeq, () => cancelled);
+            return () => { cancelled = true; };
+          }, [binding, validAnchor, anchorSeq]);
+
+          React.useEffect(() => {
+            if (!entry || !childId || !binding || !windowState) return;
+            const activity = threadActivity(windowState?.entries, anchorSeq);
+            const count = activity.replies;
+            const lastTime = activity.updatedAt;
             const patch = {};
-            if (count > 0 && count !== entry.replies) patch.replies = count;
+            if (threadHistoryComplete(binding, anchorSeq, windowState) && count !== entry.replies) {
+              patch.replies = count;
+            }
             if (lastTime > (entry.updatedAt || 0)) {
               patch.updatedAt = lastTime;
-              patch.seenAt = Date.now();
             }
+            if (lastTime > (entry.seenAt || 0)) patch.seenAt = Math.max(lastTime, Date.now());
             if (Object.keys(patch).length > 0) patchThread(parentId, anchorSeq, patch);
-          }, [items, entry, childId, parentId, anchorSeq]);
+          }, [windowState, snapshot?.hasMore, entry, childId, parentId, anchorSeq, binding]);
 
           React.useEffect(() => {
             if (!childId) return;
@@ -2713,37 +3253,61 @@ window.__ModuleLoader__.load({
             stickRef.current = element.scrollHeight - element.scrollTop - element.clientHeight < 64;
           };
 
-          const send = async () => {
-            const text = draft.trim();
-            if ((!text && images.length === 0) || sending || !validAnchor || archived) return;
+          const deliver = async (request) => {
+            if (attemptRef.current || activeDeliveries.has(request.key) || archived) return;
+            if (request.stage === 'parent') {
+              failedDeliveries.delete(request.key);
+              setRetryRequest(null);
+              return;
+            }
+            if (!request.requestId) request.requestId = createThreadRequestId();
+            const attempt = {};
+            attemptRef.current = attempt;
+            activeDeliveries.add(request.key);
             setSending(true);
             setFailure('');
             try {
-              if (!childId) {
-                const quoteSnapshot = quoteFromBinding(parentBinding, anchorSeq);
-                const created = await ctx.sessions.fork({
-                  sessionId: parentId,
-                  atSeq: anchorSeq,
-                  increaseTitle: true,
-                });
-                setThread(parentId, anchorSeq, {
-                  childId: created,
-                  replies: 1,
-                  createdAt: Date.now(),
-                  updatedAt: Date.now(),
-                  ...(quoteSnapshot
-                    ? {
-                        quote: {
-                          user: truncateText(quoteSnapshot.user, 600),
-                          assistant: truncateText(quoteSnapshot.assistant, 1500),
-                        },
-                      }
-                    : {}),
-                });
-                const reference = ctx.sessions.retain(created, { source: RETAIN_SOURCE });
+              if (request.stage === 'thread') {
+                let target = threadAt(request.parentId, request.anchorSeq)?.childId;
+                if (!target) {
+                  const quoteSnapshot = quoteFromBinding(parentBinding, request.anchorSeq);
+                  target = await ctx.sessions.fork({
+                    sessionId: request.parentId,
+                    atSeq: request.anchorSeq,
+                    increaseTitle: true,
+                  });
+                  setThread(request.parentId, request.anchorSeq, {
+                    childId: target,
+                    replies: 0,
+                    createdAt: Date.now(),
+                    updatedAt: Date.now(),
+                    ...(quoteSnapshot ? { quote: {
+                      user: truncateText(quoteSnapshot.user, 600),
+                      assistant: truncateText(quoteSnapshot.assistant, 1500),
+                    } } : {}),
+                  });
+                }
+                const reference = ctx.sessions.retain(target, { source: RETAIN_SOURCE });
                 try {
-                  const createdBinding = await reference.ready;
-                  await promptSession(createdBinding, text, images);
+                  const targetBinding = await reference.ready;
+                  const prepared = [];
+                  for (const image of request.images) {
+                    if (typeof image.data === 'string') {
+                      prepared.push(image);
+                      continue;
+                    }
+                    // A retry after reopening the panel reads durable image bytes.
+                    const result = await targetBinding.session.readAttachment(image.attachmentId);
+                    if (!result?.ok) throw new Error(errorText(result?.error) || t('panel.sendFailed'));
+                    const bytes = result.value.data;
+                    let binary = '';
+                    for (let offset = 0; offset < bytes.length; offset += 32768) {
+                      binary += String.fromCharCode(...bytes.subarray(offset, offset + 32768));
+                    }
+                    prepared.push({ ...image, mediaType: image.mediaType, data: btoa(binary) });
+                  }
+                  request.images = prepared;
+                  await promptSession(targetBinding, request.text, request.images, request.requestId);
                 } finally {
                   try {
                     reference.release();
@@ -2751,39 +3315,46 @@ window.__ModuleLoader__.load({
                     /* already released */
                   }
                 }
-              } else if (binding) {
-                await promptSession(binding, text, images);
-                const current = threadAt(parentId, anchorSeq);
-                if (current) {
-                  patchThread(parentId, anchorSeq, {
-                    replies: (current.replies || 0) + 1,
-                    updatedAt: Date.now(),
-                  });
-                }
-              } else {
-                throw new Error(t('panel.loading'));
+                request.stage = 'done';
               }
-              if (alsoSend && text && parentBinding) {
-                try {
-                  await parentBinding.session.prompt(
-                    [{ type: 'text', text: t('panel.alsoSendPrefix') + text }],
-                    'queue',
-                  );
-                } catch (error) {
-                  setFailure(errorText(error));
-                }
+              queueSharedReply(request.parentId, request.anchorSeq, request,
+                t('panel.sharedImageQuestion', { count: request.images.length }));
+              if (failedDeliveries.get(request.key) === request) failedDeliveries.delete(request.key);
+              if (loadDraft(request.key) === request.rawDraft) saveDraft(request.key, '');
+              if (activeDraftKey.current === request.key) {
+                setRetryRequest(null);
+                const sentIds = new Set(request.images.map((image) => image.id));
+                setImages((current) => current.filter((image) => !sentIds.has(image.id)));
+                requestAnimationFrame(() => inputRef.current?.focus());
               }
-              setDraft('');
-              if (draftKey) saveDraft(draftKey, '');
-              setImages([]);
-              requestAnimationFrame(() => {
-                if (inputRef.current) inputRef.current.focus();
-              });
             } catch (error) {
-              setFailure(errorText(error));
+              request.error = errorText(error);
+              failedDeliveries.set(request.key, request);
+              if (activeDraftKey.current === request.key) {
+                setRetryRequest(request);
+                setFailure(request.error);
+              }
             } finally {
-              setSending(false);
+              activeDeliveries.delete(request.key);
+              if (attemptRef.current === attempt) {
+                attemptRef.current = null;
+                setSending(false);
+              }
             }
+          };
+
+          const send = async () => {
+            const text = draft.trim();
+            if ((!text && images.length === 0) || sending || !validAnchor || archived) return;
+            // Retrying the unchanged draft keeps its original RPC identity.
+            if (pendingRequest?.rawDraft === draft) {
+              return deliver(pendingRequest);
+            }
+            setRetryRequest(null);
+            return deliver({
+              key: draftKey, parentId, anchorSeq, rawDraft: draft, text,
+              images: images.slice(), shareToMain, stage: 'thread', requestId: createThreadRequestId(),
+            });
           };
 
           const stop = () => {
@@ -2792,25 +3363,25 @@ window.__ModuleLoader__.load({
           };
 
           const retry = async () => {
-            if (!binding || sending) return;
-            let lastText = '';
+            if (sending) return;
+            if (pendingRequest) return deliver(pendingRequest);
+            if (!binding) return;
+            if (draft.trim() || images.length) return send();
+            let lastMessage;
             for (let index = items.length - 1; index >= 0; index -= 1) {
               const item = items[index];
-              if (item.kind === 'user' && item.text) {
-                lastText = item.text;
+              if (item.kind === 'user' && (item.text || item.images?.length)) {
+                lastMessage = item;
                 break;
               }
             }
-            if (!lastText) return;
-            setSending(true);
-            setFailure('');
-            try {
-              await promptSession(binding, lastText, []);
-            } catch (error) {
-              setFailure(errorText(error));
-            } finally {
-              setSending(false);
-            }
+            if (!lastMessage) return;
+            return deliver({
+              key: draftKey, parentId, anchorSeq, rawDraft: null,
+              text: lastMessage.text, images: (lastMessage.images || []).slice(),
+              shareToMain: Boolean(lastMessage.requestId && entry?.sharedReplies?.[lastMessage.requestId]),
+              stage: 'thread', requestId: lastMessage.requestId || createThreadRequestId(),
+            });
           };
 
           const openChild = () => {
@@ -2936,6 +3507,14 @@ window.__ModuleLoader__.load({
           return h(
             'div',
             { className: 'dt-panel' },
+            persistenceProblem
+              ? h(
+                  'div',
+                  { className: 'dt-error dt-store-error', role: 'alert' },
+                  h('span', { className: 'dt-error-text', title: persistenceProblem }, t('panel.storeUnsaved')),
+                  h('button', { type: 'button', className: 'dt-retry', onClick: retryPersist }, t('panel.retrySave')),
+                )
+              : null,
             h(
               'div',
               { className: 'dt-quote' },
@@ -3019,7 +3598,7 @@ window.__ModuleLoader__.load({
                   'div',
                   { className: 'dt-error dt-error-bottom' },
                   h('span', { className: 'dt-error-text' }, problem),
-                  binding && !archived
+                  !archived && (pendingRequest || (binding && snapshot?.promptError?.op === 'send'))
                     ? h(
                         'button',
                         { type: 'button', className: 'dt-retry', onClick: retry },
@@ -3158,11 +3737,11 @@ window.__ModuleLoader__.load({
                     { className: 'dt-also' },
                     h('input', {
                       type: 'checkbox',
-                      checked: alsoSend,
+                      checked: shareToMain,
                       disabled: archived,
-                      onChange: (event) => setAlsoSend(event.target.checked),
+                      onChange: (event) => setShareToMain(event.target.checked),
                     }),
-                    h('span', null, t('panel.alsoSend')),
+                    h('span', null, t('panel.shareToMain')),
                   ),
                   h(
                     'span',

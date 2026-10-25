@@ -2,7 +2,7 @@
 
 DeepSeek Harness（DSH）侧边线程对话插件，提供独立回复面板及可选的 Slack 风格聊天界面。点击任意一轮回答下的「回复」，即可在右侧栏继续追问。
 
-当前版本：**0.13.9** · 包名：`dsh-threads` · [版本下载](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/releases/tag/v0.13.9) · [问题反馈](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/issues)
+当前版本：**0.14.0** · 包名：`dsh-threads` · [版本下载](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/releases/tag/v0.14.0) · [问题反馈](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/issues)
 
 ## 安装
 
@@ -11,7 +11,7 @@ DeepSeek Harness（DSH）侧边线程对话插件，提供独立回复面板及�
 从 GitHub 安装固定版本：
 
 ```powershell
-dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.13.9
+dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.14.0
 ```
 
 安装完成后重启 `dsh web`，刷新浏览器。在一轮已完成的回答下确认「回复」入口，在对话标题栏确认「线程」按钮及 Slack 样式开关。
@@ -28,7 +28,7 @@ dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads
 
 ```text
 请使用当前桌面端内置的 plugin_manager 安装
-github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.13.9。
+github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.14.0。
 先检查当前 profile 和已安装的同名插件，已有安装时核对来源与版本；
 通过工具支持的安装或更新操作完成，并报告实际安装版本和重启要求。
 ```
@@ -37,10 +37,10 @@ github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.13.9。
 
 ### 离线资源包
 
-下载 Release 中的 `dsh-threads-0.13.9.tgz`，在文件所在目录执行：
+下载 Release 中的 `dsh-threads-0.14.0.tgz`，在文件所在目录执行：
 
 ```powershell
-dsh plugin --profile web add ./dsh-threads-0.13.9.tgz
+dsh plugin --profile web add ./dsh-threads-0.14.0.tgz
 ```
 
 也可下载 ZIP，解压后使用包含 `package.json` 的目录绝对路径：
@@ -100,7 +100,7 @@ dsh plugin --profile web remove dsh-threads
 - 线程页签标题是动态的：显示被回复回答的前 18 个字，同时开几条时能分清。
 - 线程面板的「带回主对话」把线程最后一条回答以引用块写进主对话输入框（不直接发送，你自己决定发不发、改不改）。
 - 线程输入框支持粘贴/拖拽图片，按宿主默认限制：最多 20 张、单张 20 MB；超过 2048px 长边或 4 MP 的图会先在浏览器里缩放（WebP，透明底转白）再发送。
-- 线程子会话继承父会话的 Agent 预设（Host 半边在子会话创建、Agent 尚未产生时写入 `agent-preset/selected`；注册表重建 Agent 读的正是这个投影，因此不受 `agentPresets.select()` 的「已开始」限制）。
+- 线程子会话继承父会话的 Agent 预设。新版宿主在分叉时继承；旧版宿主遗漏时，插件补写 `agent-preset/selected`，已有相同预设时跳过。
 - 左侧栏里属于线程的子会话行前会显示线程小图标，和普通分支会话区分开。
 - 对话标题栏的 Slack 开关（胶囊 + 滑动方块，`role="switch"`）切换消息行样式：Slack 模式下 `user`、`assistant-step`、`steering` 换成头像 + 作者 + 时间的 Slack 行，其余节点仍由宿主渲染；随时可切回原生。
 - Slack 行悬停出现整行高亮和浮动操作条（复制、回复进线程、从这个回答分支）。
@@ -108,8 +108,9 @@ dsh plugin --profile web remove dsh-threads
 - 用户消息恢复文件卡片（名称/类型/大小）、引用摘要（`referenceLabels`）与技能名（`skillNames`）。
 - 中途插入的消息（`steering`）渲染成单行「插话」折叠行，点击展开，不再撑成一条完整消息。
 - 线程卡片显示运行中圆点（脉冲）、未读圆点，并在线程完成时刷新条数与最后回复时间。
-- 线程输入框可勾选「同时发到主对话」，把这条线程消息以 `[来自线程]` 前缀也发进父会话（会触发父 Agent 回复）。
-- 线程面板头部显示最后回复时间与参与者头像，失败时提供「重试」。
+- 线程输入框可勾选「在主会话展示线程结果」，默认关闭。发送仅触发线程 Agent；主会话在原回答下展示该次请求的状态与结果卡片。流式更新、完成及重试沿用同一卡片。
+- 结果卡片提供线程入口，记录保存在 Host 线程索引中。卡片供用户查看；主 Agent 接收结论时，使用「带回主对话」写入草稿，编辑后明确发送。
+- 线程面板头部显示最后回复时间与参与者头像，失败时提供「重试」。重试保留失败消息的文字、图片和请求 ID。
 - 图片点击打开灯箱（点背景或 Esc 关闭）；正文链接、引用块、代码块使用爵士配色。
 - 工具与过程行保留宿主富卡片，只通过 `data-chat-flow-kind` 把外壳缩进对齐到 Slack 正文（Slack 模式下生效）。
 
@@ -131,3 +132,15 @@ dsh plugin --profile web remove dsh-threads
 - `client.js` — 全部客户端逻辑：线程索引、回复入口、右侧面板、Slack 皮肤。
 - `index.js` — Host 半边：`/dsh-threads/store` 持久化路由 + 线程子会话的 Agent 预设继承。
 - `cordis.patch.yml` — 安装入口。
+
+## 开发与验证
+
+```powershell
+npm run check
+npm test
+npm pack --dry-run
+```
+
+回归测试覆盖并发保存、键级合并、异步草稿恢复、保存失败重试、发送失败及图片重试、主会话被动结果卡片、回复统计、未读状态和 Slack 内容展示。测试使用临时目录及内存宿主，不读取现有 DSH 会话或存储文件。
+
+客户端通过 `/dsh-threads/store` 的 PATCH 接口提交发生变化的线程、草稿及外观偏好；Host 在写入队列内完成合并。保存失败时，面板显示提示并保留本地变更，最多自动重试三次，也可点击「重试保存」。旧版 PUT / POST 完整快照接口继续保留。Host 与客户端应同时更新。

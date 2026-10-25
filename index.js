@@ -11,26 +11,26 @@
  *    applies the same Host/Origin and browser-authentication checks as the
  *    rest of the Web surface.
  *
- * 2. Preset inheritance. A thread is a forked child Session. `sessions.fork`
- *    copies the parent's history and meta (cwd, parentSession, isSeeded) but
- *    not its Agent preset, so the child would otherwise compose the
- *    registry's default preset and answer with a different persona/tool set.
- *    `agentPresets.select()` cannot repair that after the fact — it refuses
- *    any Session that already has turns, and a fork inherits them. The
- *    supported seam is earlier: when a seeded child is published, record the
- *    parent's preset on the child itself, before its first Agent exists. The
- *    preset registry seeds its `agentPreset` Session projection from that
- *    event, and that projection — not the immutable header — is what Agent
- *    reconstruction reads.
+ * 2. Preset inheritance compatibility. Current Hosts inherit the parent's
+ *    Agent preset while forking. Older Hosts may omit it; for those versions,
+ *    record `agent-preset/selected` on a freshly published seeded child. A
+ *    child that already inherited the preset needs no additional event.
+ *    Agent reconstruction reads the `agentPreset` Session projection.
  */
 
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { randomUUID } from 'node:crypto';
+import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import path from 'node:path';
 
 const STORE_ROUTE = '/dsh-threads/store';
 const STORE_LIMIT = 2 * 1024 * 1024;
 const EMPTY_STORE = '{"version":1,"threads":{},"drafts":{},"skin":"native"}';
+// Shared by route instances so service rebinding never creates a second writer.
+const storeWrites = new Map();
+const PATCH_FIELDS = new Set(['version', 'threads', 'drafts', 'skin', 'theme']);
+
+class StoreTooLargeError extends Error {}
 
 export const inject = ['sessions'];
 
@@ -49,19 +49,112 @@ function storePath() {
 }
 
 function installStore(ctx) {
-  const server = typeof ctx.get === 'function' ? ctx.get('webServer') : undefined;
-  const connection = typeof ctx.get === 'function' ? ctx.get('connection') : undefined;
-  if (server === undefined || connection === undefined) return;
-  if (typeof server.register !== 'function') return;
-  ctx.effect(
-    () =>
-      server.register({
-        kind: 'exact',
-        path: STORE_ROUTE,
-        handler: (req, res) => handleStore(ctx, connection, req, res),
-      }),
-    'threads: store route',
-  );
+  ctx.inject(['webServer', 'connection'], (webCtx) => {
+    webCtx.effect(
+      () =>
+        webCtx.webServer.register({
+          kind: 'exact',
+          path: STORE_ROUTE,
+          handler: (req, res) => handleStore(webCtx, webCtx.connection, req, res),
+        }),
+      'threads: store route',
+    );
+  });
+}
+
+async function readStore(file) {
+  try {
+    return await readFile(file, 'utf8');
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+    return EMPTY_STORE;
+  }
+}
+
+function isRecord(value) {
+  return value !== null && typeof value === 'object' && !Array.isArray(value);
+}
+
+function validPatch(patch) {
+  if (Object.keys(patch).some((key) => !PATCH_FIELDS.has(key))) return false;
+  if (Object.hasOwn(patch, 'skin') && !['native', 'slack'].includes(patch.skin)) return false;
+  if (Object.hasOwn(patch, 'theme') && !['default', 'jazz'].includes(patch.theme)) return false;
+  if (Object.hasOwn(patch, 'drafts')) {
+    if (!isRecord(patch.drafts)) return false;
+    if (Object.values(patch.drafts).some((draft) => draft !== null && typeof draft !== 'string')) return false;
+  }
+  if (Object.hasOwn(patch, 'threads')) {
+    if (!isRecord(patch.threads)) return false;
+    for (const [parentId, bucket] of Object.entries(patch.threads)) {
+      if (parentId === 'v') continue;
+      if (!parentId || !isRecord(bucket)) return false;
+      for (const [seq, entry] of Object.entries(bucket)) {
+        if (!/^(0|[1-9]\d*)$/.test(seq) || !Number.isSafeInteger(Number(seq))) return false;
+        if (entry !== null && !isRecord(entry)) return false;
+      }
+    }
+  }
+  return true;
+}
+
+function copyRecord(value) {
+  // Null prototypes keep JSON keys such as __proto__ as ordinary data keys.
+  return Object.assign(Object.create(null), isRecord(value) ? value : {});
+}
+
+function mergePatch(current, patch) {
+  if (!isRecord(current) || current.version !== 1) throw new Error('Invalid persisted store');
+  const next = { ...current };
+  if (Object.hasOwn(patch, 'threads')) {
+    next.threads = copyRecord(current.threads);
+    for (const [parentId, changes] of Object.entries(patch.threads)) {
+      if (parentId === 'v') continue;
+      const bucket = copyRecord(next.threads[parentId]);
+      for (const [seq, entry] of Object.entries(changes)) {
+        if (entry === null) delete bucket[seq];
+        else bucket[seq] = entry;
+      }
+      if (Object.keys(bucket).length) next.threads[parentId] = bucket;
+      else delete next.threads[parentId];
+    }
+  }
+  if (Object.hasOwn(patch, 'drafts')) {
+    next.drafts = copyRecord(current.drafts);
+    for (const [key, value] of Object.entries(patch.drafts)) {
+      if (value === null) delete next.drafts[key];
+      else next.drafts[key] = value;
+    }
+  }
+  if (Object.hasOwn(patch, 'skin')) next.skin = patch.skin;
+  if (Object.hasOwn(patch, 'theme')) next.theme = patch.theme;
+  return next;
+}
+
+function persistStore(file, text, patch) {
+  const previous = storeWrites.get(file) ?? Promise.resolve();
+  const writing = previous.catch(() => {}).then(async () => {
+    // The read belongs inside the same queue as the atomic replacement.
+    const body = patch ? JSON.stringify(mergePatch(JSON.parse(await readStore(file)), patch)) : text;
+    if (Buffer.byteLength(body, 'utf8') > STORE_LIMIT) throw new StoreTooLargeError();
+    await mkdir(path.dirname(file), { recursive: true });
+    const temporary = `${file}.${randomUUID()}.tmp`;
+    try {
+      await writeFile(temporary, body, { encoding: 'utf8', flag: 'wx' });
+      await rename(temporary, file);
+    } finally {
+      try {
+        await unlink(temporary);
+      } catch (error) {
+        if (error.code !== 'ENOENT') throw error;
+      }
+    }
+  });
+  storeWrites.set(file, writing);
+  const release = () => {
+    if (storeWrites.get(file) === writing) storeWrites.delete(file);
+  };
+  writing.then(release, release);
+  return writing;
 }
 
 async function handleStore(ctx, connection, req, res) {
@@ -74,12 +167,7 @@ async function handleStore(ctx, connection, req, res) {
   const file = storePath();
   try {
     if (req.method === 'GET' || req.method === 'HEAD') {
-      let body = EMPTY_STORE;
-      try {
-        body = await readFile(file, 'utf8');
-      } catch (error) {
-        if (error.code !== 'ENOENT') throw error;
-      }
+      const body = await readStore(file);
       res.writeHead(200, {
         'content-type': 'application/json; charset=utf-8',
         'cache-control': 'no-store',
@@ -87,7 +175,7 @@ async function handleStore(ctx, connection, req, res) {
       res.end(req.method === 'HEAD' ? undefined : body);
       return;
     }
-    if (req.method === 'PUT' || req.method === 'POST') {
+    if (req.method === 'PUT' || req.method === 'POST' || req.method === 'PATCH') {
       let size = 0;
       const chunks = [];
       for await (const chunk of req) {
@@ -108,22 +196,24 @@ async function handleStore(ctx, connection, req, res) {
         res.end();
         return;
       }
-      if (parsed === null || typeof parsed !== 'object' || parsed.version !== 1) {
+      if (!isRecord(parsed) || parsed.version !== 1 || (req.method === 'PATCH' && !validPatch(parsed))) {
         res.writeHead(400);
         res.end();
         return;
       }
-      await mkdir(path.dirname(file), { recursive: true });
-      const temporary = file + '.tmp';
-      await writeFile(temporary, text, 'utf8');
-      await rename(temporary, file);
+      await persistStore(file, text, req.method === 'PATCH' ? parsed : undefined);
       res.writeHead(204);
       res.end();
       return;
     }
-    res.writeHead(405, { allow: 'GET, PUT' });
+    res.writeHead(405, { allow: 'GET, HEAD, PUT, POST, PATCH' });
     res.end();
   } catch (error) {
+    if (error instanceof StoreTooLargeError) {
+      res.writeHead(413);
+      res.end();
+      return;
+    }
     ctx.logger?.warn?.(`[dsh-threads] store request failed: ${String(error)}`);
     res.writeHead(500);
     res.end();
