@@ -1,11 +1,15 @@
 {
   "name": "dsh-threads",
-  "version": "0.14.1",
-  "description": "Side-panel conversation threads and an optional Slack-style interface for DeepSeek Harness.",
+  "version": "0.15.0",
+  "description": "Side-panel threads, independent Slack message layout, and Native/Slack/Jazz palettes for DeepSeek Harness.",
   "type": "module",
   "main": "./index.js",
   "icon": "./icon.svg",
   "license": "MIT",
+  "engines": {
+    "node": ">=24.0.0",
+    "dsh": ">=0.2.2-rc.3 <0.2.3-0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads.git"
@@ -17,14 +21,16 @@
   "keywords": ["deepseek", "deepseek-harness", "dsh", "dsh-plugin", "threads", "slack-style"],
   "scripts": {
     "check": "node --check index.js && node --check client.js",
-    "test": "node --test test/client-store.test.js test/host-store.test.js test/store-integration.test.js test/slack-rendering.test.js test/thread-behavior.test.js test/thread-history.test.js test/shared-results.test.js test/thread-navigation.test.js",
+    "test": "node --test test/client-store.test.js test/host-store.test.js test/store-integration.test.js test/slack-rendering.test.js test/thread-behavior.test.js test/thread-history.test.js test/shared-results.test.js test/thread-navigation.test.js test/theme.test.js",
     "release:package": "python scripts/package-release.py"
   },
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",
     "./locale/*.json": "./locale/*.json",
-    "./icon": "./icon.svg"
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
   },
   "files": [
     "index.js",

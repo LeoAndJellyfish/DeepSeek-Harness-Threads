@@ -1,8 +1,8 @@
 # DeepSeek Harness Threads
 
-DeepSeek Harness（DSH）侧边线程对话插件，提供独立回复面板及可选的 Slack 风格聊天界面。点击任意一轮回答下的「回复」，即可在右侧栏继续追问。
+DeepSeek Harness（DSH）侧边线程对话插件，提供独立回复面板、Slack 消息布局及原生／Slack／爵士三种界面配色。点击任意一轮回答下的「回复」，即可在右侧栏继续追问。
 
-当前版本：**0.14.1** · 包名：`dsh-threads` · [版本下载](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/releases/tag/v0.14.1) · [问题反馈](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/issues)
+当前版本：**0.15.0** · 包名：`dsh-threads` · [版本下载](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/releases/tag/v0.15.0) · [问题反馈](https://github.com/LeoAndJellyfish/DeepSeek-Harness-Threads/issues)
 
 ## 安装
 
@@ -11,10 +11,10 @@ DeepSeek Harness（DSH）侧边线程对话插件，提供独立回复面板及�
 从 GitHub 安装固定版本：
 
 ```powershell
-dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.14.1
+dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.15.0
 ```
 
-安装完成后重启 `dsh web`，刷新浏览器。在一轮已完成的回答下确认「回复」入口，在对话标题栏确认「线程」按钮及 Slack 样式开关。
+安装完成后重启 `dsh web`，刷新浏览器。在一轮已完成的回答下确认「回复」入口，在设置的「线程与外观」页选择消息布局和界面配色。
 
 安装开发分支当前版本：
 
@@ -28,7 +28,7 @@ dsh plugin --profile web add github:LeoAndJellyfish/DeepSeek-Harness-Threads
 
 ```text
 请使用当前桌面端内置的 plugin_manager 安装
-github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.14.1。
+github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.15.0。
 先检查当前 profile 和已安装的同名插件，已有安装时核对来源与版本；
 通过工具支持的安装或更新操作完成，并报告实际安装版本和重启要求。
 ```
@@ -37,10 +37,10 @@ github:LeoAndJellyfish/DeepSeek-Harness-Threads#v0.14.1。
 
 ### 离线资源包
 
-下载 Release 中的 `dsh-threads-0.14.1.tgz`，在文件所在目录执行：
+下载 Release 中的 `dsh-threads-0.15.0.tgz`，在文件所在目录执行：
 
 ```powershell
-dsh plugin --profile web add ./dsh-threads-0.14.1.tgz
+dsh plugin --profile web add ./dsh-threads-0.15.0.tgz
 ```
 
 也可下载 ZIP，解压后使用包含 `package.json` 的目录绝对路径：
@@ -63,7 +63,9 @@ dsh plugin --profile web remove dsh-threads
 
 ### 运行条件
 
-插件使用 DSH 的会话分叉、右侧栏、聊天节点插槽和 Markdown 模块。客户端声明为 `web`，由 DSH Web 界面加载；官方桌面端通过内置 Web 界面加载。宿主版本升级可能调整这些接口。
+运行条件：DSH `>=0.2.2-rc.3 <0.2.3-0`，Node.js 24 及以上。当前验证基线为 DSH `0.2.2-rc.3`。
+
+插件使用 DSH 的会话分叉、右侧栏、聊天节点插槽、Theme 服务和 Markdown 模块。客户端声明为 `web`，由 DSH Web 界面加载；官方桌面端通过内置 Web 界面加载。宿主版本升级可能调整这些接口。
 
 ## 功能
 
@@ -71,12 +73,30 @@ dsh plugin --profile web remove dsh-threads
 - 线程导航：回复条数、运行状态、未读提示、最近更新时间。
 - 消息输入：文字草稿持久化、粘贴与拖拽图片、线程结论引用。
 - 可选 Slack 样式：DeepSeek 账号头像与鲸鱼助手标、日期分隔、悬停操作条、折叠插话，以及 `/goal` 命令输入与结果卡片。
+- 三种全局配色：原生、Slack 原版（深蓝侧栏、绿色按钮）、爵士蓝；独立于消息布局，支持浅深色模式。
 - Host 持久化：线程索引、文字草稿和界面偏好在重启后保留。
+
+## 外观设置与旧主题迁移
+
+设置 →「线程与外观」提供两个独立选项：
+
+| 设置 | 选择 | 作用 |
+| --- | --- | --- |
+| Slack 消息布局 | 开启／关闭 | 消息行、日期分隔、悬停操作条；标题栏开关同步此偏好 |
+| 界面配色 | 原生／Slack／爵士 | 全局 token 与 Slack 深蓝侧栏；跟随宿主浅深色模式 |
+
+`0.15.0` 已合并原独立 `dsh-slack-theme`。同时安装过两包时，先更新 `dsh-threads`，再从同一 profile 卸载 `dsh-slack-theme`，按宿主提示重启。Web profile 示例：
+
+```powershell
+dsh plugin --profile web remove dsh-slack-theme
+```
+
+已有 `theme: jazz`、消息布局、线程索引及文字草稿继续保留。需要 Slack 原版配色时，在「界面配色」选择「Slack」。选择「原生」或卸载线程插件时，插件释放主题 token、侧栏样式和观察器。
 
 ## 用法
 
 1. 刷新页面（安装/升级后需要一次）。
-2. 把鼠标移到任意一条**已完成**回答的底部动作行，点气泡图标「回复」。
+2. 将鼠标移到任意一条**已完成**回答的底部动作行，点气泡图标「回复」。
 3. 右侧栏出现「线程」页签：顶部引用被回复的那条回答，下面是回复流和输入框。
 4. 第一次发送时才真正创建线程——它是一条从该轮分叉出来的子会话，继承到该轮为止的上下文。
 5. 线程存在后，该轮下方会常驻一行「N 条回复」，点它随时回到线程。
@@ -142,6 +162,20 @@ npm test
 npm pack --dry-run
 ```
 
-回归测试覆盖并发保存、键级合并、异步草稿恢复、保存失败重试、发送失败及图片重试、主会话被动结果卡片、回复统计、未读状态和 Slack 内容展示。测试使用临时目录及内存宿主，不读取现有 DSH 会话或存储文件。
+92 项行为回归覆盖并发保存、键级合并、异步草稿恢复、保存失败重试、发送失败及图片重试、主会话被动结果卡片、回复统计、未读状态、Slack 内容展示，以及配色切换、旧偏好恢复和主题资源清理。测试使用临时目录及内存宿主，不读取现有 DSH 会话或存储文件。
 
 客户端通过 `/dsh-threads/store` 的 PATCH 接口提交发生变化的线程、草稿及外观偏好；Host 在写入队列内完成合并。保存失败时，面板显示提示并保留本地变更，最多自动重试三次，也可点击「重试保存」。旧版 PUT / POST 完整快照接口继续保留。Host 与客户端应同时更新。
+
+## 路线图
+
+```mermaid
+flowchart TD
+    A["0.14.1 · 已完成 · 线程与偏好持久化"] --> B["0.15.0 · 已完成 · Slack 主题单包整合"]
+    B --> C["已通过 · 三色配色、独立布局与行为回归"]
+    C --> D{"后续宿主接口升级"}
+    D -->|兼容检查通过| E["后续 · 更新兼容范围与版本"]
+    D -->|接口变化| F["后续 · 适配并补充回归"]
+    F --> C
+```
+
+本轮交付为 Slack 原版色板、三种配色选择及统一生命周期管理；运行条件记录于 `package.json`。发行前执行语法检查、全部行为回归及打包校验，GitHub Actions 同步验证 Windows / Linux。每次发行提供 TGZ、离线 ZIP 和 `SHA256SUMS`。

@@ -224,3 +224,15 @@ test('PATCH merge keeps the total persisted state within the size limit', async 
     assert.equal(await readFile(file, 'utf8'), initial);
   });
 });
+
+test('all palette preferences persist through PATCH without changing threads, drafts or layout', async () => {
+  await withStore(async ({ file }) => {
+    const host = createHost();
+    const initial = { version: 1, threads: { parent: { 1: { childId: 'child' } } }, drafts: { draft: 'keep' }, skin: 'slack', theme: 'jazz' };
+    assert.equal((await host.request('PUT', initial)).status, 204);
+    for (const theme of ['slack', 'default', 'jazz']) {
+      assert.equal((await host.request('PATCH', { version: 1, theme })).status, 204);
+      assert.deepEqual(JSON.parse(await readFile(file, 'utf8')), { ...initial, theme });
+    }
+  });
+});

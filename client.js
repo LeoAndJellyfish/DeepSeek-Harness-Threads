@@ -20,7 +20,7 @@ window.__ModuleLoader__.load({
 
     const PLUGIN_ID = 'dsh-threads';
     /** Keep in sync with package.json; the account Remote carries it as the client build. */
-    const PLUGIN_VERSION = '0.14.1';
+    const PLUGIN_VERSION = '0.15.0';
     /** Official DSH whale mark (50x50 favicon path), used only for the assistant avatar. */
     const WHALE_PATH = "M48.8354 10.0479C48.3232 9.79199 48.1025 10.2798 47.8032 10.5278C47.7007 10.6079 47.6143 10.7119 47.5273 10.8076C46.7793 11.624 45.9048 12.1597 44.7622 12.0957C43.0923 12 41.666 12.5356 40.4058 13.8398C40.1377 12.2319 39.2476 11.272 37.8926 10.6558C37.1836 10.3359 36.4668 10.0156 35.9702 9.31982C35.6235 8.82373 35.5293 8.27197 35.356 7.72754C35.2456 7.3999 35.1353 7.06396 34.7651 7.00781C34.3633 6.94385 34.2056 7.2876 34.0479 7.57568C33.418 8.75195 33.1733 10.0479 33.1973 11.3599C33.2524 14.312 34.4736 16.6641 36.8999 18.3359C37.1758 18.5278 37.2466 18.7197 37.1597 19C36.9946 19.5757 36.7974 20.1357 36.624 20.7119C36.5137 21.0801 36.3486 21.1597 35.9624 21C34.6309 20.4321 33.481 19.5918 32.4644 18.5757C30.7393 16.8721 29.1792 14.9917 27.2334 13.52C26.7764 13.1758 26.3193 12.856 25.8467 12.5518C23.8618 10.584 26.1069 8.96777 26.627 8.77588C27.1704 8.57568 26.8159 7.8877 25.0591 7.896C23.3022 7.90381 21.6953 8.50391 19.647 9.30371C19.3477 9.42383 19.0322 9.51172 18.7095 9.58398C16.8501 9.22363 14.9199 9.14355 12.9033 9.37598C9.10596 9.80762 6.07275 11.6396 3.84326 14.7681C1.16455 18.5278 0.53418 22.7998 1.30664 27.2559C2.11768 31.9521 4.46582 35.8398 8.07373 38.8799C11.8159 42.0322 16.1255 43.5762 21.041 43.2803C24.0269 43.104 27.3516 42.6963 31.1016 39.4561C32.0469 39.936 33.0396 40.1279 34.686 40.272C35.9546 40.3921 37.1758 40.208 38.1211 40.0078C39.6021 39.688 39.4995 38.2881 38.9639 38.0322C34.623 35.9678 35.5762 36.8081 34.71 36.1279C36.9155 33.4639 40.2402 30.6958 41.54 21.728C41.6426 21.0161 41.5557 20.5679 41.54 19.9917C41.5322 19.6396 41.6108 19.5039 42.0049 19.4639C43.0923 19.3359 44.1479 19.0317 45.1167 18.4878C47.9292 16.9199 49.064 14.3438 49.3315 11.2559C49.3711 10.7837 49.3237 10.2959 48.8354 10.0479ZM24.3262 37.8398C20.1196 34.4639 18.0791 33.3521 17.2358 33.3999C16.4482 33.4482 16.5898 34.3682 16.7632 34.9678C16.9443 35.5601 17.1812 35.9683 17.5117 36.4878C17.7402 36.832 17.8979 37.3442 17.2832 37.728C15.9282 38.584 13.5728 37.4399 13.4624 37.3838C10.7207 35.7358 8.42822 33.5601 6.81348 30.584C5.25342 27.7197 4.34766 24.6479 4.19775 21.3677C4.1582 20.5757 4.38672 20.2959 5.15869 20.1519C6.17529 19.96 7.22314 19.9199 8.23926 20.0718C12.5327 20.7119 16.1885 22.6719 19.2529 25.7759C21.002 27.5439 22.3252 29.6558 23.6885 31.7202C25.1377 33.9121 26.6978 36 28.6831 37.7119C29.3843 38.312 29.9434 38.7681 30.479 39.104C28.8643 39.2881 26.1699 39.3281 24.3262 37.8398ZM26.3433 24.6001C26.3433 24.248 26.6191 23.9678 26.9658 23.9678C27.0444 23.9678 27.1152 23.9839 27.1782 24.0078C27.2651 24.04 27.3438 24.0879 27.4067 24.1602C27.5171 24.272 27.5801 24.4321 27.5801 24.6001C27.5801 24.9521 27.3042 25.2319 26.9575 25.2319C26.6108 25.2319 26.3433 24.9521 26.3433 24.6001ZM32.6064 27.8799C32.2046 28.0479 31.8027 28.1919 31.4165 28.208C30.8179 28.2397 30.1641 27.9922 29.8096 27.688C29.2583 27.2158 28.8643 26.9521 28.6987 26.1279C28.6279 25.7759 28.6675 25.2319 28.7305 24.9199C28.8721 24.248 28.7144 23.8159 28.2495 23.4238C27.8716 23.104 27.3911 23.0161 26.8633 23.0161C26.666 23.0161 26.4849 22.9277 26.3511 22.856C26.1304 22.7441 25.9492 22.4639 26.1226 22.1201C26.1777 22.0078 26.4458 21.7358 26.5088 21.688C27.2256 21.272 28.0527 21.4077 28.8169 21.7197C29.5259 22.0161 30.0615 22.5601 30.834 23.3281C31.6216 24.2559 31.7632 24.5117 32.2124 25.208C32.5669 25.752 32.8901 26.312 33.1104 26.9521C33.2446 27.3521 33.0713 27.6802 32.6064 27.8799Z";
     const NS = 'threads';
@@ -102,12 +102,15 @@ window.__ModuleLoader__.load({
       'skin.on': 'Slack',
       'skin.off': '原生',
       'skin.title': '切换 Slack 消息样式（只影响消息列表）',
-      'settings.section.title': 'Slack 外观',
-      'settings.section.description': '把对话和界面切换成 Slack 风格，只影响本插件渲染的部分。',
-      'settings.appearance.title': 'Slack 外观',
-      'settings.appearance.description': '把对话消息行换成 Slack 风格：头像、作者、时间、日期分隔与悬停操作条。',
-      'settings.theme.title': 'Slack 主题',
-      'settings.theme.description': '用爵士配色（#4C64A6 / #71A3D1 / #14ADFF / #1D3F5E）替换全局界面颜色，可随时关闭。',
+      'settings.section.title': '线程与外观',
+      'settings.section.description': '独立选择消息布局和全局界面配色，偏好随线程索引一起保存。',
+      'settings.appearance.title': 'Slack 消息布局',
+      'settings.appearance.description': '显示头像、作者、时间、日期分隔与悬停操作条。关闭后使用原生消息布局。',
+      'settings.theme.title': '界面配色',
+      'settings.theme.description': 'Slack 配色包含深蓝侧栏和绿色按钮；爵士配色沿用蓝色系。均支持浅色与深色模式。',
+      'settings.theme.default': '原生',
+      'settings.theme.slack': 'Slack',
+      'settings.theme.jazz': '爵士',
       'skin.copied': '已复制',
       'skin.branch': '从这个回答分支',
       'skin.refs': '引用：{labels}',
@@ -207,15 +210,18 @@ window.__ModuleLoader__.load({
       'skin.on': 'Slack',
       'skin.off': 'Native',
       'skin.title': 'Toggle the Slack message style (message list only)',
-      'settings.section.title': 'Slack appearance',
+      'settings.section.title': 'Threads & appearance',
       'settings.section.description':
-        'Switch the conversation and interface to the Slack style. Only surfaces this plugin renders are affected.',
-      'settings.appearance.title': 'Slack appearance',
+        'Choose message layout and global palette independently. Preferences are saved with the thread index.',
+      'settings.appearance.title': 'Slack message layout',
       'settings.appearance.description':
         'Render chat messages as Slack rows: avatars, author, time, date dividers and hover actions.',
-      'settings.theme.title': 'Slack theme',
+      'settings.theme.title': 'Interface palette',
       'settings.theme.description':
-        'Repaint the whole interface with the jazz palette (#4C64A6 / #71A3D1 / #14ADFF / #1D3F5E). Reversible.',
+        'Slack includes a navy sidebar and green buttons; Jazz keeps the blue palette. Both support light and dark modes.',
+      'settings.theme.default': 'Native',
+      'settings.theme.slack': 'Slack',
+      'settings.theme.jazz': 'Jazz',
       'skin.copied': 'Copied',
       'skin.branch': 'Branch from this answer',
       'skin.refs': 'Refs: {labels}',
@@ -478,17 +484,21 @@ window.__ModuleLoader__.load({
     }
 
     /* ------------------------------------------------------------------ *
-     * Global jazz theme preference. `jazz` stacks the palette over the
-     * active theme through the Theme service; `default` stays untouched.
+     * Global palette preference. Slack and Jazz use the Theme service;
+     * default releases this plugin's palette layer.
      * ------------------------------------------------------------------ */
 
     const THEME_KEY = 'dsh.threads.theme';
     let themeMode = readThemeMode();
     const themeModeListeners = new Set();
 
+    function normalizeThemeMode(value) {
+      return value === 'slack' || value === 'jazz' ? value : 'default';
+    }
+
     function readThemeMode() {
       try {
-        return window.localStorage.getItem(THEME_KEY) === 'jazz' ? 'jazz' : 'default';
+        return normalizeThemeMode(window.localStorage.getItem(THEME_KEY));
       } catch (error) {
         return 'default';
       }
@@ -502,7 +512,7 @@ window.__ModuleLoader__.load({
     }
 
     function setThemeMode(next) {
-      themeMode = next === 'jazz' ? 'jazz' : 'default';
+      themeMode = normalizeThemeMode(next);
       themeTouched = true;
       pendingChanges.theme = themeMode;
       try {
@@ -769,7 +779,7 @@ window.__ModuleLoader__.load({
           store = applyThreadChanges(applyThreadChanges(hostThreads, cacheThreads), pendingChanges.threads);
           drafts = applyKeyChanges(applyKeyChanges(hostDrafts, cacheDrafts), pendingChanges.drafts);
           if (!skinTouched && !migrating && (data.skin === 'slack' || data.skin === 'native')) skin = data.skin;
-          if (!themeTouched && !migrating && (data.theme === 'jazz' || data.theme === 'default')) themeMode = data.theme;
+          if (!themeTouched && !migrating && ['default', 'slack', 'jazz'].includes(data.theme)) themeMode = data.theme;
           storeVersion += 1;
           cacheLocal(STORAGE_KEY, JSON.stringify(store));
           cacheLocal(DRAFTS_KEY, JSON.stringify(drafts));
@@ -1003,7 +1013,7 @@ window.__ModuleLoader__.load({
         notifyListeners(skinListeners);
       } else if (event.key === THEME_KEY) {
         if (pendingChanges.theme !== undefined || savingChanges?.theme !== undefined) return;
-        themeMode = event.newValue === 'jazz' ? 'jazz' : 'default';
+        themeMode = normalizeThemeMode(event.newValue);
         notifyListeners(themeModeListeners);
       }
     }
@@ -1865,9 +1875,231 @@ window.__ModuleLoader__.load({
       'button.dt-settings-switch[aria-checked="true"]{background:var(--sk-indigo);border-color:var(--sk-indigo)}',
       'button.dt-settings-switch .dt-settings-knob{display:block;width:16px;height:16px;border-radius:50%;background:#ffffff;box-shadow:0 1px 2px rgba(0,0,0,.2);transform:translateX(0);transition:transform .16s cubic-bezier(.4,0,.2,1)}',
       'button.dt-settings-switch[aria-checked="true"] .dt-settings-knob{transform:translateX(18px)}',
+      '.dt-settings-select{flex:none;min-width:100px;padding:7px 10px;border:1px solid var(--dsw-alias-border-l2);border-radius:6px;background:var(--dsw-alias-bg-base);color:var(--dsw-alias-label-primary);font:inherit;font-size:13px;cursor:pointer}',
+      '.dt-settings-select:focus-visible{outline:2px solid var(--dsw-alias-brand-primary);outline-offset:2px}',
     ].join('\n');
 
     /** Token layer that repaints the whole app with the jazz palette. */
+    const RAIL_COLOR = '#304977';
+    const RAIL_COLOR_DARK = '#1D2433';
+
+    /**
+     * Alias-token override layer. Values follow the Slack palette: white
+     * canvas, `#1D1C1D` ink, `#1264A3` links and accents, `#007A5A` primary
+     * actions, Slack red / amber / green for states.
+     */
+    const SLACK_TOKENS = {
+      /* ── Surfaces ────────────────────────────────────────────────────── */
+      '--dsw-alias-bg-base': { light: '#FFFFFF', dark: '#1A1D21' },
+      '--dsw-alias-bg-layer-1': { light: '#FFFFFF', dark: '#222529' },
+      '--dsw-alias-bg-layer-2': { light: '#FFFFFF', dark: '#2C2D30' },
+      '--dsw-alias-bg-layer-3': { light: '#FFFFFF', dark: '#35373B' },
+      '--dsw-alias-bg-overlay': { light: '#F8F8F8', dark: '#222529' },
+      '--dsw-alias-bg-multi-select': { light: '#F8F8F8', dark: '#2C2D30' },
+      '--dsw-alias-bg-module-platform': { light: '#F8F8F8', dark: '#222529' },
+      '--dsw-alias-bg-document-preview': { light: '#F8F8F8', dark: '#1A1D21' },
+      '--dsw-alias-label-document-preview': { light: '#616061', dark: '#ABABAD' },
+      '--dsw-alias-bg-skeleton': { light: 'rgba(29, 28, 29, .05)', dark: 'rgba(255, 255, 255, .08)' },
+      '--dsw-alias-bg-mask-1': { light: 'rgba(0, 0, 0, .32)', dark: 'rgba(0, 0, 0, .55)' },
+      '--dsw-alias-bg-mask-2': { light: 'rgba(0, 0, 0, .12)', dark: 'rgba(0, 0, 0, .24)' },
+      '--dsw-alias-bg-mask-3': { light: 'rgba(0, 0, 0, .48)', dark: 'rgba(0, 0, 0, .58)' },
+      '--dsw-alias-bg-mask-drop': { light: 'rgba(255, 255, 255, .72)', dark: 'rgba(26, 29, 33, .72)' },
+
+      /* ── Text ────────────────────────────────────────────────────────── */
+      '--dsw-alias-label-primary': { light: '#1D1C1D', dark: '#D1D2D3' },
+      '--dsw-alias-label-primary-dimmed': { light: '#1D1C1D', dark: '#E4E5E6' },
+      '--dsw-alias-label-primary-bluish': { light: '#1D1C1D', dark: '#D1D2D3' },
+      '--dsw-alias-label-primary-foreground': { light: '#FFFFFF', dark: '#FFFFFF' },
+      '--dsw-alias-label-primary-inverted': { light: '#FFFFFF', dark: '#1A1D21' },
+      '--dsw-alias-label-secondary': { light: '#616061', dark: '#ABABAD' },
+      '--dsw-alias-label-tertiary': { light: '#767676', dark: '#9A9A9C' },
+      '--dsw-alias-label-caption': { light: '#A0A0A2', dark: '#7C7C7E' },
+      '--dsw-alias-label-dimmed': { light: '#C4C4C6', dark: '#4C4C4E' },
+      '--dsw-alias-label-shimmer': { light: 'rgba(29, 28, 29, .26)', dark: 'rgba(255, 255, 255, .45)' },
+      '--dsw-alias-label-deep-diving': { light: '#1264A3', dark: '#1D9BD1' },
+      '--dsw-alias-label-deep-diving-shimmer': { light: '#7FB4D6', dark: '#5CC1E8' },
+      '--dsw-alias-menu-icon': { light: '#616061', dark: '#ABABAD' },
+      '--dsw-alias-brand-text': { light: '#1D1C1D', dark: '#D1D2D3' },
+
+      /* ── Borders ─────────────────────────────────────────────────────── */
+      '--dsw-alias-border-l1': { light: 'rgba(29, 28, 29, .07)', dark: 'rgba(255, 255, 255, .07)' },
+      '--dsw-alias-border-l2': { light: 'rgba(29, 28, 29, .12)', dark: 'rgba(255, 255, 255, .11)' },
+      '--dsw-alias-border-l2-darkmode-thin': { light: 'rgba(29, 28, 29, .10)', dark: 'rgba(255, 255, 255, .07)' },
+      '--dsw-alias-border-l3': { light: 'rgba(29, 28, 29, .16)', dark: 'rgba(255, 255, 255, .15)' },
+      '--dsw-alias-border-l4': { light: 'rgba(29, 28, 29, .22)', dark: 'rgba(255, 255, 255, .20)' },
+
+      /* ── Interaction ─────────────────────────────────────────────────── */
+      '--dsw-alias-interactive-bg-hover': { light: 'rgba(29, 28, 29, .05)', dark: 'rgba(255, 255, 255, .06)' },
+      '--dsw-alias-interactive-bg-active': { light: 'rgba(29, 28, 29, .09)', dark: 'rgba(255, 255, 255, .12)' },
+      '--dsw-alias-interactive-bg-hover-solid': { light: '#F3F3F3', dark: '#2C2D30' },
+      '--dsw-alias-interactive-bg-hover-accent': { light: 'rgba(18, 100, 163, .12)', dark: 'rgba(29, 155, 209, .20)' },
+      '--dsw-alias-interactive-bg-hover-danger': { light: 'rgba(224, 30, 90, .08)', dark: 'rgba(224, 30, 90, .16)' },
+
+      /* ── Brand and buttons ───────────────────────────────────────────── */
+      '--dsw-alias-brand-primary': { light: '#007A5A', dark: '#0A7E5F' },
+      '--dsw-alias-brand-primary-invert': { light: '#FFFFFF', dark: '#FFFFFF' },
+      '--dsw-alias-brand-primary-new-colorprimary-new-color': { light: '#1264A3', dark: '#1D9BD1' },
+      '--dsw-alias-button-primary-hover': { light: '#148567', dark: '#19A07B' },
+      '--dsw-alias-button-primary-dimmed': { light: '#E8F2EE', dark: '#22443B' },
+      '--dsw-alias-button-contrast-fill': { light: '#1D1C1D', dark: '#D1D2D3' },
+      '--dsw-alias-button-elevated-fill': { light: '#FFFFFF', dark: '#2C2D30' },
+      '--dsw-alias-button-floating-fill': { light: '#FFFFFF', dark: '#222529' },
+      '--dsw-alias-button-floating-hover': { light: '#F0F0F0', dark: '#2C2D30' },
+      '--dsw-alias-button-ghost-active-fill': { light: '#F0F0F0', dark: '#2C2D30' },
+      '--dsw-alias-button-ghost-active-hover': { light: '#E6E6E6', dark: '#35373B' },
+      '--dsw-alias-button-ghost-active-border': { light: '#ABABAD', dark: '#5A5A5C' },
+      '--dsw-alias-button-info-fill': { light: '#1264A3', dark: '#1D9BD1' },
+      '--dsw-alias-button-info-hover': { light: '#0B4C8C', dark: '#36C5F0' },
+      '--dsw-alias-link': { light: '#1264A3', dark: '#1D9BD1' },
+
+      /* ── Named surfaces ──────────────────────────────────────────────── */
+      '--dsw-specific-bubble': { light: '#F8F8F8', dark: '#2C2D30' },
+      '--dsw-specific-bubble-highlight': { light: '#EDEDED', dark: '#35373B' },
+      '--dsw-specific-input-major': { light: '#FFFFFF', dark: '#2C2D30' },
+      '--dsw-specific-login-input': { light: '#F8F8F8', dark: '#222529' },
+      '--dsw-specific-selector': { light: '#F0F0F0', dark: '#2C2D30' },
+      '--dsw-specific-tip': { light: '#F8F8F8', dark: '#222529' },
+      '--dsw-specific-sidebar-fill': { light: '#F8F8F8', dark: '#222529' },
+      '--dsw-specific-sidebar-nav-item-hover': { light: '#F8F8F8', dark: '#27292D' },
+      '--dsw-specific-sidebar-nav-item-active': { light: '#F0F0F0', dark: '#2C2D30' },
+      '--dsw-specific-sidebar-nav-item-active-accent': { light: '#E8F5FA', dark: '#1E3A47' },
+      '--dsw-menu-surface-fill': { light: 'rgba(255, 255, 255, .98)', dark: 'rgba(44, 45, 48, .96)' },
+      '--dsw-alias-menu-group-header-fill': { light: 'rgba(248, 248, 248, .96)', dark: 'rgba(44, 45, 48, .96)' },
+
+      /* ── Markdown ────────────────────────────────────────────────────── */
+      '--dsw-alias-markdown-code-block': { light: '#F8F8F8', dark: '#222529' },
+      '--dsw-alias-markdown-code-block-banner': { light: '#F0F0F0', dark: '#2C2D30' },
+      '--dsw-alias-markdown-code-segment-selected': { light: '#FFFFFF', dark: '#2C2D30' },
+      '--dsw-alias-markdown-code-segment-unselected': { light: '#F8F8F8', dark: '#222529' },
+      '--dsw-alias-markdown-inline-code': { light: '#F2F2F2', dark: '#2C2D30' },
+      '--dsw-alias-markdown-placeholder': { light: '#F8F8F8', dark: '#2C2D30' },
+      '--dsw-alias-markdown-tag': { light: '#F0F0F0', dark: '#2C2D30' },
+      '--dsw-alias-markdown-citation': { light: '#F8F8F8', dark: '#222529' },
+
+      /* ── Scrollbars ──────────────────────────────────────────────────── */
+      '--dsw-alias-scrollbar-bg-l1': { light: 'rgba(29, 28, 29, .18)', dark: '#4A4A4C' },
+      '--dsw-alias-scrollbar-bg-l2': { light: 'rgba(29, 28, 29, .18)', dark: '#4A4A4C' },
+      '--dsw-alias-scrollbar-hover-l1': { light: 'rgba(29, 28, 29, .34)', dark: '#616163' },
+      '--dsw-alias-scrollbar-hover-l2': { light: 'rgba(29, 28, 29, .34)', dark: '#616163' },
+
+      /* ── States ──────────────────────────────────────────────────────── */
+      '--dsw-alias-state-business-primary': { light: '#1264A3', dark: '#1D9BD1' },
+      '--dsw-alias-state-business-tertiary': { light: '#E8F5FA', dark: '#152A33' },
+      '--dsw-alias-state-error-primary': { light: '#D81E55', dark: '#F06A82' },
+      '--dsw-alias-state-error-secondary': { light: '#E01E5A', dark: '#F0616D' },
+      '--dsw-alias-state-success-primary': { light: '#0B7D5E', dark: '#2EB67D' },
+      '--dsw-alias-state-success-secondary': { light: '#2EB67D', dark: '#2EB67D' },
+      '--dsw-alias-state-success-tertiary': { light: '#E6F5EE', dark: '#1E3B31' },
+      '--dsw-alias-state-warn-label': { light: '#8A6100', dark: '#ECB22E' },
+      '--dsw-alias-state-warn-primary': { light: '#ECB22E', dark: '#ECB22E' },
+      '--dsw-alias-state-warn-secondary': { light: '#F2C744', dark: '#F2C744' },
+      '--dsw-alias-state-warn-tertiary': { light: '#FDF2DA', dark: '#3B3016' },
+      '--dsw-alias-state-idle-primary': { light: '#ABABAD', dark: '#6A6A6C' },
+      '--dsw-alias-switch-thumb': { light: '#FFFFFF', dark: '#D1D2D3' },
+      '--dsw-alias-toast-bg': { light: '#1D1C1D', dark: '#2C2D30' },
+      '--dsw-alias-toast-label': { light: '#FFFFFF', dark: '#E4E5E6' },
+      '--dsw-alias-tooltip-bg': { light: '#1D1C1D', dark: '#2C2D30' },
+
+      /* ── Corner geometry: Slack's flat, squared chrome ───────────────── */
+      '--dsw-radius-xs': { light: '3px', dark: '3px' },
+      '--dsw-radius-sm': { light: '4px', dark: '4px' },
+      '--dsw-radius-md': { light: '6px', dark: '6px' },
+      '--dsw-radius-lg': { light: '8px', dark: '8px' },
+      '--dsw-radius-xl': { light: '10px', dark: '10px' },
+      '--dsw-radius-panel': { light: '12px', dark: '12px' },
+    };
+
+    /** Rail-scoped tokens: near-white ink, translucent fills, Slack blue accent. */
+    const RAIL_TOKENS_LIGHT = `
+  --dsw-specific-sidebar-fill: ${RAIL_COLOR};
+  --dsw-specific-sidebar-nav-item-hover: rgba(255, 255, 255, .08);
+  --dsw-specific-sidebar-nav-item-active: rgba(255, 255, 255, .14);
+  --dsw-specific-sidebar-nav-item-active-accent: #DCE7F5;
+  --dsw-alias-label-primary: #F8FAFD;
+  --dsw-alias-label-primary-dimmed: #E9EEF7;
+  --dsw-alias-label-primary-bluish: #F8FAFD;
+  --dsw-alias-label-primary-inverted: #26385C;
+  --dsw-alias-label-secondary: #C3CFE4;
+  --dsw-alias-label-tertiary: #B5C3D8;
+  --dsw-alias-label-caption: #AFBFD5;
+  --dsw-alias-label-dimmed: #6E81A3;
+  --dsw-alias-label-shimmer: rgba(255, 255, 255, .38);
+  --dsw-alias-menu-icon: #C3CFE4;
+  --dsw-alias-brand-text: #F8FAFD;
+  --dsw-alias-link: #B7DCF7;
+  --dsw-alias-label-deep-diving: #BFE1F9;
+  --dsw-alias-state-business-primary: #A5D2F2;
+  --dsw-alias-interactive-bg-hover: rgba(255, 255, 255, .08);
+  --dsw-alias-interactive-bg-active: rgba(255, 255, 255, .14);
+  --dsw-alias-interactive-bg-hover-solid: rgba(255, 255, 255, .1);
+  --dsw-alias-button-elevated-fill: rgba(255, 255, 255, .12);
+  --dsw-alias-button-floating-fill: rgba(255, 255, 255, .08);
+  --dsw-alias-button-floating-hover: rgba(255, 255, 255, .18);
+  --dsw-alias-button-ghost-active-fill: rgba(255, 255, 255, .14);
+  --dsw-alias-button-ghost-active-hover: rgba(255, 255, 255, .2);
+  --dsw-alias-button-ghost-active-border: rgba(255, 255, 255, .3);
+  --dsw-alias-border-l1: rgba(255, 255, 255, .09);
+  --dsw-alias-border-l2: rgba(255, 255, 255, .13);
+  --dsw-alias-border-l3: rgba(255, 255, 255, .18);
+  --dsw-alias-border-l4: rgba(255, 255, 255, .24);
+  --dsw-alias-scrollbar-bg-l1: rgba(255, 255, 255, .18);
+  --dsw-alias-scrollbar-bg-l2: rgba(255, 255, 255, .18);
+  --dsw-alias-scrollbar-hover-l1: rgba(255, 255, 255, .32);
+  --dsw-alias-scrollbar-hover-l2: rgba(255, 255, 255, .32);
+`;
+
+    const RAIL_TOKENS_DARK = `
+  --dsw-specific-sidebar-fill: ${RAIL_COLOR_DARK};
+  --dsw-specific-sidebar-nav-item-hover: rgba(255, 255, 255, .07);
+  --dsw-specific-sidebar-nav-item-active: rgba(255, 255, 255, .12);
+  --dsw-specific-sidebar-nav-item-active-accent: #35455F;
+  --dsw-alias-label-primary: #E9EDF5;
+  --dsw-alias-label-primary-dimmed: #DCE3EE;
+  --dsw-alias-label-primary-bluish: #E9EDF5;
+  --dsw-alias-label-primary-inverted: #1D2433;
+  --dsw-alias-label-secondary: #B4BFD2;
+  --dsw-alias-label-tertiary: #98A4BA;
+  --dsw-alias-label-caption: #808CA3;
+  --dsw-alias-label-dimmed: #616C80;
+  --dsw-alias-label-shimmer: rgba(255, 255, 255, .32);
+  --dsw-alias-menu-icon: #B4BFD2;
+  --dsw-alias-brand-text: #E9EDF5;
+  --dsw-alias-link: #9FD4F2;
+  --dsw-alias-label-deep-diving: #B5DBF5;
+  --dsw-alias-state-business-primary: #8FC7EC;
+  --dsw-alias-button-info-fill: #9AD6F2;
+  --dsw-alias-interactive-bg-hover: rgba(255, 255, 255, .07);
+  --dsw-alias-interactive-bg-active: rgba(255, 255, 255, .12);
+  --dsw-alias-interactive-bg-hover-solid: rgba(255, 255, 255, .09);
+  --dsw-alias-button-elevated-fill: rgba(255, 255, 255, .10);
+  --dsw-alias-button-floating-fill: rgba(255, 255, 255, .07);
+  --dsw-alias-button-floating-hover: rgba(255, 255, 255, .16);
+  --dsw-alias-button-ghost-active-fill: rgba(255, 255, 255, .12);
+  --dsw-alias-button-ghost-active-hover: rgba(255, 255, 255, .18);
+  --dsw-alias-button-ghost-active-border: rgba(255, 255, 255, .26);
+  --dsw-alias-border-l1: rgba(255, 255, 255, .08);
+  --dsw-alias-border-l2: rgba(255, 255, 255, .12);
+  --dsw-alias-border-l3: rgba(255, 255, 255, .16);
+  --dsw-alias-border-l4: rgba(255, 255, 255, .22);
+  --dsw-alias-scrollbar-bg-l1: rgba(255, 255, 255, .16);
+  --dsw-alias-scrollbar-bg-l2: rgba(255, 255, 255, .16);
+  --dsw-alias-scrollbar-hover-l1: rgba(255, 255, 255, .3);
+  --dsw-alias-scrollbar-hover-l2: rgba(255, 255, 255, .3);
+`;
+
+    const SLACK_RAIL_CSS = `
+/* The Windows frame paints the title strip with the sidebar token; on a light
+   palette that strip must carry the rail colour too, or the navy column starts
+   under a stray grey band. */
+[data-dsh-threads-slack-frame] { background: ${RAIL_COLOR} !important; }
+body[data-ds-dark-theme] [data-dsh-threads-slack-frame] { background: ${RAIL_COLOR_DARK} !important; }
+
+/* The rail column re-binds the text, fill, border and scrollbar tokens for its
+   own subtree, so the white content canvas keeps the light values. */
+body [data-dsh-threads-slack-sidebar] {${RAIL_TOKENS_LIGHT}}
+body[data-ds-dark-theme] [data-dsh-threads-slack-sidebar] {${RAIL_TOKENS_DARK}}
+`;
+
     const JAZZ_TOKENS = {
       '--dsw-alias-bg-base': { light: '#FFFFFF', dark: '#0B1622' },
       '--dsw-alias-bg-layer-1': { light: '#F7F9FC', dark: '#12212F' },
@@ -1885,8 +2117,60 @@ window.__ModuleLoader__.load({
       '--dsw-specific-sidebar-fill': { light: '#F0F4F9', dark: '#08121C' },
     };
 
+    let slackRailSerial = 0;
+
+    /** Follow the host shell across rebuilds and restore only our own marks. */
+    function mountSlackRail() {
+      const sidebarAttribute = 'data-dsh-threads-slack-sidebar';
+      const frameAttribute = 'data-dsh-threads-slack-frame';
+      const marker = 'threads-' + (++slackRailSerial);
+      const style = document.createElement('style');
+      style.dataset.plugin = PLUGIN_ID;
+      style.dataset.theme = 'slack';
+      style.textContent = SLACK_RAIL_CSS;
+      let railRecord = null;
+      let frameRecord = null;
+      let observer = null;
+      const restore = (record) => {
+        if (!record || record.element.getAttribute(record.attribute) !== marker) return;
+        if (record.previous === null) record.element.removeAttribute(record.attribute);
+        else record.element.setAttribute(record.attribute, record.previous);
+      };
+      const mark = (record, element, attribute) => {
+        if (record?.element === element && element?.getAttribute(attribute) === marker) return record;
+        restore(record);
+        if (!element) return null;
+        const previous = element.getAttribute(attribute);
+        element.setAttribute(attribute, marker);
+        return { element, attribute, previous };
+      };
+      const sync = () => {
+        const rail = document.querySelector('[class*="_logoRow"]')?.parentElement || null;
+        const frame = rail?.closest('[style*="grid-template-columns"]') || null;
+        railRecord = mark(railRecord, rail, sidebarAttribute);
+        frameRecord = mark(frameRecord, frame, frameAttribute);
+      };
+      const dispose = () => {
+        observer?.disconnect();
+        restore(railRecord);
+        restore(frameRecord);
+        railRecord = frameRecord = null;
+        style.remove();
+      };
+      try {
+        document.head.appendChild(style);
+        sync();
+        observer = new MutationObserver(sync);
+        observer.observe(document.body, { childList: true, subtree: true });
+        return dispose;
+      } catch (error) {
+        dispose();
+        throw error;
+      }
+    }
+
     return {
-      inject: ['slots', 'sessions', 'locale', 'remote', 'sidebarRight', 'sidebarRightTabs', 'uiWorkspace', 'workspaces'],
+      inject: ['slots', 'sessions', 'locale', 'remote', 'sidebarRight', 'sidebarRightTabs', 'uiWorkspace', 'workspaces', 'theme'],
       apply(ctx) {
         const t = ctx.locale.bind(NS);
 
@@ -2988,6 +3272,7 @@ window.__ModuleLoader__.load({
               className: 'dt-settings-switch',
               role: 'switch',
               'aria-checked': props.on ? 'true' : 'false',
+              'aria-label': props.label,
               onClick: () => props.onChange(!props.on),
             },
             h('span', { className: 'dt-settings-knob', 'aria-hidden': true }),
@@ -3006,7 +3291,7 @@ window.__ModuleLoader__.load({
                 ? h('div', { className: 'dt-settings-desc' }, props.description)
                 : null,
             ),
-            h(SettingsSwitch, { on: props.on, onChange: props.onChange }),
+            props.control || h(SettingsSwitch, { on: props.on, onChange: props.onChange, label: props.title }),
           );
         }
 
@@ -3025,8 +3310,14 @@ window.__ModuleLoader__.load({
           return h(SettingsRow, {
             title: t('settings.theme.title'),
             description: t('settings.theme.description'),
-            on: mode === 'jazz',
-            onChange: (next) => setThemeMode(next ? 'jazz' : 'default'),
+            control: h('select', {
+              className: 'dt-settings-select',
+              'aria-label': t('settings.theme.title'),
+              value: mode,
+              onChange: (event) => setThemeMode(event.target.value),
+            }, ['default', 'slack', 'jazz'].map((value) =>
+              h('option', { key: value, value }, t('settings.theme.' + value)),
+            )),
           });
         }
 
@@ -3934,16 +4225,16 @@ window.__ModuleLoader__.load({
               name: 'settings.section',
               id: PLUGIN_ID + '/settings',
               order: 25,
-              label: 'Slack',
+              label: t('settings.section.title'),
             },
             SlackSettingsSection,
           ),
         );
 
-        /* Global theme: stack the jazz token layer while the preference is on. */
+        /* One owner for all palette tokens, rail styles and shell observers. */
         ctx.effect(() => {
           let disposer = null;
-          const sync = () => {
+          const clear = () => {
             if (disposer !== null) {
               try {
                 disposer();
@@ -3952,29 +4243,33 @@ window.__ModuleLoader__.load({
               }
               disposer = null;
             }
-            if (themeMode !== 'jazz') return;
+          };
+          const sync = () => {
+            clear();
+            if (themeMode === 'default') return;
             const theme = ctx.get('theme');
-            if (theme === undefined || typeof theme.overrideTokens !== 'function') return;
+            if (!theme || typeof theme.overrideTokens !== 'function') return;
+            let releaseTokens = null;
+            let releaseRail = null;
+            const release = () => {
+              try { releaseRail?.(); } finally { releaseTokens?.(); }
+            };
             try {
-              disposer = theme.overrideTokens('dsh-threads/jazz', JAZZ_TOKENS);
+              releaseTokens = theme.overrideTokens('dsh-threads/theme', themeMode === 'slack' ? SLACK_TOKENS : JAZZ_TOKENS);
+              if (themeMode === 'slack') releaseRail = mountSlackRail();
+              disposer = release;
             } catch (error) {
-              ctx.logger?.warn?.(`[dsh-threads] cannot stack the jazz theme: ${String(error)}`);
+              release();
+              ctx.logger?.warn?.(`[dsh-threads] cannot apply the ${themeMode} palette: ${String(error)}`);
             }
           };
           sync();
           const unsubscribe = subscribeThemeMode(sync);
           return () => {
             unsubscribe();
-            if (disposer !== null) {
-              try {
-                disposer();
-              } catch (error) {
-                /* already removed */
-              }
-              disposer = null;
-            }
+            clear();
           };
-        }, 'threads: jazz theme');
+        }, 'threads: global palette');
 
         /* Slack skin: replace the user/assistant/steering rows, the goal
          * command input, and the goal command result. Every other Chat node

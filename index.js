@@ -78,7 +78,7 @@ function isRecord(value) {
 function validPatch(patch) {
   if (Object.keys(patch).some((key) => !PATCH_FIELDS.has(key))) return false;
   if (Object.hasOwn(patch, 'skin') && !['native', 'slack'].includes(patch.skin)) return false;
-  if (Object.hasOwn(patch, 'theme') && !['default', 'jazz'].includes(patch.theme)) return false;
+  if (Object.hasOwn(patch, 'theme') && !['default', 'slack', 'jazz'].includes(patch.theme)) return false;
   if (Object.hasOwn(patch, 'drafts')) {
     if (!isRecord(patch.drafts)) return false;
     if (Object.values(patch.drafts).some((draft) => draft !== null && typeof draft !== 'string')) return false;
